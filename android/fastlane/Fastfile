@@ -35,4 +35,10 @@ platform :android do
     gradle(task: "clean assembleRelease")
     upload_to_play_store
   end
+
+  lane :distribute_to_firebase_ad do
+    firebase_app_distribution({
+      app
+    })
+  end
 end

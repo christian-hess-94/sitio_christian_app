@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "20572179212",
+    "project_id": "sitio-christian",
+    "storage_bucket": "sitio-christian.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20572179212:android:30e2c926e66d9e77fcd729",
+        "android_client_info": {
+          "package_name": "com.sitio_christian_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20572179212-b5j79ct0n9jf51l9q07erip9al1ovpes.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJhDCXPnqDPxjwy_X3BKyxPgX5Z7KzbjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20572179212-b5j79ct0n9jf51l9q07erip9al1ovpes.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
