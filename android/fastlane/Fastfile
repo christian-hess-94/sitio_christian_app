@@ -16,9 +16,29 @@
 default_platform(:android)
 
 platform :android do
-  desc "Runs all the tests"
-  lane :test do
-    gradle(task: "test")
+
+  desc "Deploy to firebase app distribution"
+  lane :distribute_to_firebase do
+    #Garante que existam essas variaveis no .env
+    ensure_env_vars(
+      env_vars:['FIREBASE_TOKEN', "FIREBASE_APP_ID"]
+    )
+    #recupera as variaveis de ambiente do .env
+    firebase_token = ENV['FIREBASE_TOKEN']
+    app_id = ENV['FIREBASE_APP_ID']
+
+    bump_version
+    build_release_apk
+    #após o build recebe o GRADLE_APK_OUTPUT_PATH como objeto de contexto
+    apk_path = lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+
+    firebase_app_distribution({
+      app: app_id,
+      apk_path: apk_path,
+      groups: "testers",
+      firebase_cli_token: firebase_token,
+      release_notes: "Versão do app Sitio_Christian",
+    })
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
@@ -35,4 +55,21 @@ platform :android do
     gradle(task: "clean assembleRelease")
     upload_to_play_store
   end
+
+  private_lane :bump_version do 
+    increment_version_code(app_project_dir: "**/app")
+    increment_version_name(app_project_dir: "**/app")
+  end
+  private_lane :build_release_apk do
+    gradle({
+      task: "assemble",
+      build_type: "Release"
+    })
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+  
 end
