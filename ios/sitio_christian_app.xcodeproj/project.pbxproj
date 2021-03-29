@@ -12,6 +12,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		41940AE3341B6BF6BA1875EB /* libPods-sitio_christian_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEB949FDA9765F4BE48EE36 /* libPods-sitio_christian_app.a */; };
+		52EB1211260FE30700FC464B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52EB1210260FE30700FC464B /* GoogleService-Info.plist */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9D8092CB3B766111517B8010 /* libPods-sitio_christian_app-sitio_christian_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1325EF4A19AB2B9A3F3F10 /* libPods-sitio_christian_app-sitio_christian_appTests.a */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = sitio_christian_app/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = sitio_christian_app/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = sitio_christian_app/main.m; sourceTree = "<group>"; };
+		52EB1210260FE30700FC464B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = sitio_christian_app/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9AA961B98E137C0186A12977 /* Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig"; path = "Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF03EA2E68611951DCF9DDD5 /* Pods-sitio_christian_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sitio_christian_app.debug.xcconfig"; path = "Target Support Files/Pods-sitio_christian_app/Pods-sitio_christian_app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,13 +93,13 @@
 				0B9C9ADBF10624FAC1D6CE67 /* Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig */,
 				9AA961B98E137C0186A12977 /* Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		13B07FAE1A68108700A75B9A /* sitio_christian_app */ = {
 			isa = PBXGroup;
 			children = (
+				52EB1210260FE30700FC464B /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -245,6 +247,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				52EB1211260FE30700FC464B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZZN838FS4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = sitio_christian_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,7 +500,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sitio-christian-app";
 				PRODUCT_NAME = sitio_christian_app;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -511,6 +515,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3ZZN838FS4;
 				INFOPLIST_FILE = sitio_christian_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -521,7 +526,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sitio-christian-app";
 				PRODUCT_NAME = sitio_christian_app;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
