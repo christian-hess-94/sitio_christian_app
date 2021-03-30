@@ -1,8 +1,6 @@
-name: "Test on PR to main branch"
+name: "Test on all pushes inside PR"
 on:
   pull_request:
-  push:
-    branches: [main]
 
   workflow_dispatch:
     
