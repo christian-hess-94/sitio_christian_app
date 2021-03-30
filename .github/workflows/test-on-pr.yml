@@ -1,3 +1,4 @@
+name: "Test code"
 on:
   pull_request:
 

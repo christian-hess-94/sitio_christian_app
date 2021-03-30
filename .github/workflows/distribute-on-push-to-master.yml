@@ -1,11 +1,11 @@
-name: "Build new Android release"
+name: "Build and Distribute new Android release"
 on:
   pull_request:
     types: [closed]
     branches: [master]
 
 jobs: 
-  test:
+  build_and_distrribute:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checking out code'
