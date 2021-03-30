@@ -1,0 +1,27 @@
+name: "Build and Distribute new Android release"
+on:
+  pull_request:
+    types: [closed]
+    branches: [master]
+
+jobs: 
+  build_and_distrribute:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checking out code'
+        uses: actions/checkout@v2
+      - name: 'Installing node'
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: 'Installing Ruby'
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7.2'
+      - name: Install Dependencies using yarn
+        run: yarn install
+      - name: 'Execute Fastlane "distribute_to_firebase" lane'
+        uses: maierj/fastlane-action@v2.0.1
+        with:
+          lane: 'distribute_to_firebase'
+          subdirectory: 'android'
