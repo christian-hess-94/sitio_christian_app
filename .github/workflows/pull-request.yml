@@ -1,4 +1,4 @@
-name: "Test"
+name: "Test on PR to main branch"
 on:
   pull_request:
   push:
