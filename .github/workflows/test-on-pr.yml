@@ -1,4 +1,3 @@
-name: "Test on all pushes inside PR"
 on:
   pull_request:
 
