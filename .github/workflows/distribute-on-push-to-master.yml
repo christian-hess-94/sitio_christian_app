@@ -25,3 +25,4 @@ jobs:
         with:
           lane: 'distribute_to_firebase'
           subdirectory: 'android'
+          options: '{"release_notes": "${{github.event.pull_request.title}}"}'
