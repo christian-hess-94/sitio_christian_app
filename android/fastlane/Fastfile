@@ -18,7 +18,13 @@ default_platform(:android)
 platform :android do
 
   desc "Deploy to firebase app distribution"
-  lane :distribute_to_firebase do
+  lane :distribute_to_firebase do |options|
+    release_notes = options[:release_notes] 
+    if release_notes.nil? then 
+      puts "Nenhum release_note passado, colocando padrão"
+      release_notes = "Nova versão do app sitio_christian" 
+    end
+
     #Garante que existam essas variaveis no .env
     ensure_env_vars(
       env_vars:['FIREBASE_TOKEN', "FIREBASE_APP_ID"]
@@ -37,7 +43,7 @@ platform :android do
       apk_path: apk_path,
       groups: "testers",
       firebase_cli_token: firebase_token,
-      release_notes: "Versão do app Sitio_Christian",
+      release_notes: release_notes,
     })
   end
 

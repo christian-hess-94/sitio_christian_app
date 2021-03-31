@@ -20,7 +20,7 @@ or alternatively using `brew install fastlane`
 ```
 fastlane android distribute_to_firebase
 ```
-
+Deploy to firebase app distribution
 ### android beta
 ```
 fastlane android beta
