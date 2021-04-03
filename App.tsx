@@ -1,16 +1,18 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
+import {Alert, SafeAreaView} from 'react-native';
+import {Button, Card} from 'react-native-paper';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components';
+import {NavigationContainer} from '@react-navigation/native';
 
-import SharkSVG from './src/assets/icons/profile/001-shark.svg';
 import appTheme from './src/themes/theme';
+import Screens from './src/screens';
 const App = () => {
   return (
-    <SafeAreaView testID="app-safe-area-view">
+    <NavigationContainer>
       <StyledThemeProvider theme={appTheme}>
-        <SharkSVG color="black" />
+        <Screens />
       </StyledThemeProvider>
-    </SafeAreaView>
+    </NavigationContainer>
   );
 };
 
