@@ -16,7 +16,7 @@ import FoxProfileSVG from './icons/profile/015-fox.svg';
 import HippoProfileSVG from './icons/profile/016-hippo.svg';
 import RaccoonProfileSVG from './icons/profile/017-raccoon.svg';
 import MouseProfileSVG from './icons/profile/018-mouse.svg';
-import Tiger2ProfileSVG from './icons/profile/019-tiger.svg';
+import Tiger2ProfileSVG from './icons/profile/019-tiger2.svg';
 import LionProfileSVG from './icons/profile/020-lion.svg';
 import CowProfileSVG from './icons/profile/021-cow.svg';
 import PandaProfileSVG from './icons/profile/022-panda.svg';
