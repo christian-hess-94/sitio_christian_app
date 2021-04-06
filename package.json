@@ -7,10 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest --verbose",
-    "lint": "eslint ."
-  },
-  "husky": {
-    "pre-commit": "yarn run lint"
+    "lint": "eslint .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@react-navigation/core": "^5.15.2",
