@@ -4,4 +4,5 @@ module.exports = {
   transform: {
     '\\.(svg)$': '<rootDir>/__mocks__/svgMock.js',
   },
+  setupFiles: ['./src/config/tests'],
 };

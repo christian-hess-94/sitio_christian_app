@@ -4,13 +4,16 @@ import {ThemeProvider as StyledThemeProvider} from 'styled-components';
 
 import SharkSVG from './src/assets/icons/profile/001-shark.svg';
 import appTheme from './src/themes/theme';
+import {NavigationContainer} from '@react-navigation/native';
 const App = () => {
   return (
-    <SafeAreaView testID="app-safe-area-view">
-      <StyledThemeProvider theme={appTheme}>
-        <SharkSVG color="black" />
-      </StyledThemeProvider>
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView testID="app-safe-area-view">
+        <StyledThemeProvider theme={appTheme}>
+          <SharkSVG color="black" />
+        </StyledThemeProvider>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 };
 
