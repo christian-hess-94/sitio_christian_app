@@ -1,6 +1,4 @@
 import React from 'react';
-import {Alert, SafeAreaView} from 'react-native';
-import {Button, Card} from 'react-native-paper';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components';
 import {NavigationContainer} from '@react-navigation/native';
 
