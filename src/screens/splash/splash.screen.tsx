@@ -7,12 +7,14 @@ import {Button} from 'react-native-paper';
 export interface SplashScreenProps {}
 
 const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
-  navigation: {navigate},
+  navigation: {reset},
 }) => {
   return (
     <SplashScreenContainer>
       <AppLogo />
-      <Button onPress={() => navigate('Home', {})}>Go home</Button>
+      <Button onPress={() => reset({index: 0, routes: [{name: 'Login'}]})}>
+        Go home
+      </Button>
     </SplashScreenContainer>
   );
 };

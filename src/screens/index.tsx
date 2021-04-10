@@ -1,13 +1,15 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import HomeScreen, {HomeScreenProps} from './home.screen';
+import {View, Text} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import LoginScreen, {LoginScreenProps} from './home.screen';
 import SplashScreen, {SplashScreenProps} from './splash/splash.screen';
 
 interface ScreenProps {}
 
 export type StackScreenNames = {
   Splash: SplashScreenProps;
-  Home: HomeScreenProps;
+  Login: LoginScreenProps;
 };
 
 const Screens: React.FC<ScreenProps> = () => {
@@ -19,7 +21,7 @@ const Screens: React.FC<ScreenProps> = () => {
         component={SplashScreen}
         options={{animationEnabled: false, headerShown: false}}
       />
-      <Screen name="Home" component={HomeScreen} />
+      <Screen name="Login" options={{title: 'Login'}} component={LoginScreen} />
     </Navigator>
   );
 };

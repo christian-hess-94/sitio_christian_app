@@ -3,14 +3,14 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {StackScreenNames} from '.';
 
-export interface HomeScreenProps {}
+export interface LoginScreenProps {}
 
-const HomeScreen: React.FC<SSP<StackScreenNames, 'Home'>> = () => {
+const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = () => {
   return (
     <View>
-      <Text>Home screen</Text>
+      <Text>Login screen</Text>
     </View>
   );
 };
 
-export default HomeScreen;
+export default LoginScreen;
