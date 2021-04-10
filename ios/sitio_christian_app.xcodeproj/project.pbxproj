@@ -8,29 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* sitio_christian_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* sitio_christian_appTests.m */; };
-		0DAD2C7B76BE4F14A852C264 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C02ED2876AA496CB13E9A38 /* AntDesign.ttf */; };
-		0EA6124DB28B43D3BEB7D0FE /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFBA48C1A96A4E8F88FB0FDE /* Entypo.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		1872EA2F302348A48F077AB5 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9B376D57ED4FC284DBF116 /* Zocial.ttf */; };
-		24D2D6626A0B434784C8D9C4 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 052B352A0768447BBC70B489 /* Feather.ttf */; };
-		30A6A90692BB44A191172A3A /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A5FA167F959461F8F5A516A /* Ionicons.ttf */; };
-		41940AE3341B6BF6BA1875EB /* libPods-sitio_christian_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEB949FDA9765F4BE48EE36 /* libPods-sitio_christian_app.a */; };
-		4FF7E622308149C8971448C6 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00F50C5994994C3BB21C3D0F /* Foundation.ttf */; };
+		360BCB299A10829073487959 /* libPods-sitio_christian_app-sitio_christian_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 839910B0C006DF5C8AAC4C5B /* libPods-sitio_christian_app-sitio_christian_appTests.a */; };
 		52EB1211260FE30700FC464B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52EB1210260FE30700FC464B /* GoogleService-Info.plist */; };
-		554F564679484BB9997DBC39 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C744520A383468AA676C818 /* Octicons.ttf */; };
-		6E344217BEF345F2BFB03D4C /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B560DFD6C147470E951CE6D0 /* EvilIcons.ttf */; };
-		7099C39B9472445B98B8D2CD /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69E1450342624F6291C1F109 /* SimpleLineIcons.ttf */; };
-		7425C589C54B41E796B9C4CE /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 435385D8AB0248A3B3FA2553 /* FontAwesome.ttf */; };
-		76BFA96F73DC40E79A9F9A66 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED296FB673344A358E49AF94 /* Fontisto.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		864D1CC973B54D479BEE28BB /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B5A983DEEBB4D46A18E4FD9 /* FontAwesome5_Brands.ttf */; };
-		9D8092CB3B766111517B8010 /* libPods-sitio_christian_app-sitio_christian_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1325EF4A19AB2B9A3F3F10 /* libPods-sitio_christian_app-sitio_christian_appTests.a */; };
-		AA14496ACFEC493683D4B5DB /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48682C21C65543F7A7CC6850 /* FontAwesome5_Regular.ttf */; };
-		AAB90AC80AB34CBDB2C4EB3B /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C5620A8C02F4C04A5B6C397 /* MaterialCommunityIcons.ttf */; };
-		D998963476324DBA9760604C /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83B87BA34C054B0C827CF2A8 /* FontAwesome5_Solid.ttf */; };
-		E677900F1CD54B25950B5E89 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88F37D295FEF4F9AA71AFD86 /* MaterialIcons.ttf */; };
+		FBB05B991EDFC5F52BBBB4A2 /* libPods-sitio_christian_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3578E85E9D3CDBADAAD67FCD /* libPods-sitio_christian_app.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,37 +31,21 @@
 		00E356EE1AD99517003FC87E /* sitio_christian_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sitio_christian_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* sitio_christian_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sitio_christian_appTests.m; sourceTree = "<group>"; };
-		00F50C5994994C3BB21C3D0F /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		052B352A0768447BBC70B489 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		0B1325EF4A19AB2B9A3F3F10 /* libPods-sitio_christian_app-sitio_christian_appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sitio_christian_app-sitio_christian_appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B9C9ADBF10624FAC1D6CE67 /* Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig"; path = "Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* sitio_christian_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sitio_christian_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = sitio_christian_app/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = sitio_christian_app/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = sitio_christian_app/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = sitio_christian_app/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = sitio_christian_app/main.m; sourceTree = "<group>"; };
-		435385D8AB0248A3B3FA2553 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		48682C21C65543F7A7CC6850 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
-		4C02ED2876AA496CB13E9A38 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		3578E85E9D3CDBADAAD67FCD /* libPods-sitio_christian_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sitio_christian_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52EB1210260FE30700FC464B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5B5A983DEEBB4D46A18E4FD9 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		5E9B376D57ED4FC284DBF116 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
-		69E1450342624F6291C1F109 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
-		6C5620A8C02F4C04A5B6C397 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		7A5FA167F959461F8F5A516A /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		685A9E5700C3317AB1E9B529 /* Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig"; path = "Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = sitio_christian_app/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		83B87BA34C054B0C827CF2A8 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		88F37D295FEF4F9AA71AFD86 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		8C744520A383468AA676C818 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
-		9AA961B98E137C0186A12977 /* Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig"; path = "Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig"; sourceTree = "<group>"; };
-		B560DFD6C147470E951CE6D0 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		BF03EA2E68611951DCF9DDD5 /* Pods-sitio_christian_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sitio_christian_app.debug.xcconfig"; path = "Target Support Files/Pods-sitio_christian_app/Pods-sitio_christian_app.debug.xcconfig"; sourceTree = "<group>"; };
-		DFBA48C1A96A4E8F88FB0FDE /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		EC24BD9F06F3F05F69E3A09C /* Pods-sitio_christian_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sitio_christian_app.release.xcconfig"; path = "Target Support Files/Pods-sitio_christian_app/Pods-sitio_christian_app.release.xcconfig"; sourceTree = "<group>"; };
-		ED296FB673344A358E49AF94 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		839910B0C006DF5C8AAC4C5B /* libPods-sitio_christian_app-sitio_christian_appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sitio_christian_app-sitio_christian_appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD63ABA373DCA61F1F06BBEF /* Pods-sitio_christian_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sitio_christian_app.release.xcconfig"; path = "Target Support Files/Pods-sitio_christian_app/Pods-sitio_christian_app.release.xcconfig"; sourceTree = "<group>"; };
+		D1B297E94E71538FB46AD273 /* Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig"; path = "Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FEEB949FDA9765F4BE48EE36 /* libPods-sitio_christian_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sitio_christian_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F25511B37B0EE52A7E2935EB /* Pods-sitio_christian_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sitio_christian_app.debug.xcconfig"; path = "Target Support Files/Pods-sitio_christian_app/Pods-sitio_christian_app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D8092CB3B766111517B8010 /* libPods-sitio_christian_app-sitio_christian_appTests.a in Frameworks */,
+				360BCB299A10829073487959 /* libPods-sitio_christian_app-sitio_christian_appTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41940AE3341B6BF6BA1875EB /* libPods-sitio_christian_app.a in Frameworks */,
+				FBB05B991EDFC5F52BBBB4A2 /* libPods-sitio_christian_app.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,10 +88,10 @@
 		02386E9411475B8BFE704E24 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BF03EA2E68611951DCF9DDD5 /* Pods-sitio_christian_app.debug.xcconfig */,
-				EC24BD9F06F3F05F69E3A09C /* Pods-sitio_christian_app.release.xcconfig */,
-				0B9C9ADBF10624FAC1D6CE67 /* Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig */,
-				9AA961B98E137C0186A12977 /* Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig */,
+				F25511B37B0EE52A7E2935EB /* Pods-sitio_christian_app.debug.xcconfig */,
+				BD63ABA373DCA61F1F06BBEF /* Pods-sitio_christian_app.release.xcconfig */,
+				685A9E5700C3317AB1E9B529 /* Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig */,
+				D1B297E94E71538FB46AD273 /* Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -146,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				FEEB949FDA9765F4BE48EE36 /* libPods-sitio_christian_app.a */,
-				0B1325EF4A19AB2B9A3F3F10 /* libPods-sitio_christian_app-sitio_christian_appTests.a */,
+				3578E85E9D3CDBADAAD67FCD /* libPods-sitio_christian_app.a */,
+				839910B0C006DF5C8AAC4C5B /* libPods-sitio_christian_app-sitio_christian_appTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,22 +155,6 @@
 		AE3BFC8E04754B0B961FB3C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4C02ED2876AA496CB13E9A38 /* AntDesign.ttf */,
-				DFBA48C1A96A4E8F88FB0FDE /* Entypo.ttf */,
-				B560DFD6C147470E951CE6D0 /* EvilIcons.ttf */,
-				052B352A0768447BBC70B489 /* Feather.ttf */,
-				435385D8AB0248A3B3FA2553 /* FontAwesome.ttf */,
-				5B5A983DEEBB4D46A18E4FD9 /* FontAwesome5_Brands.ttf */,
-				48682C21C65543F7A7CC6850 /* FontAwesome5_Regular.ttf */,
-				83B87BA34C054B0C827CF2A8 /* FontAwesome5_Solid.ttf */,
-				ED296FB673344A358E49AF94 /* Fontisto.ttf */,
-				00F50C5994994C3BB21C3D0F /* Foundation.ttf */,
-				7A5FA167F959461F8F5A516A /* Ionicons.ttf */,
-				6C5620A8C02F4C04A5B6C397 /* MaterialCommunityIcons.ttf */,
-				88F37D295FEF4F9AA71AFD86 /* MaterialIcons.ttf */,
-				8C744520A383468AA676C818 /* Octicons.ttf */,
-				69E1450342624F6291C1F109 /* SimpleLineIcons.ttf */,
-				5E9B376D57ED4FC284DBF116 /* Zocial.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -215,12 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "sitio_christian_appTests" */;
 			buildPhases = (
-				2B95BC28F95E6E1960AB024A /* [CP] Check Pods Manifest.lock */,
+				90318F1C4525097FB055745F /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				9125C2C5F5667AC8A4D7BEE5 /* [CP] Embed Pods Frameworks */,
-				EF6189B16225196658567C76 /* [CP] Copy Pods Resources */,
+				6479FB09B39C6B7BEBE64AB0 /* [CP] Embed Pods Frameworks */,
+				10C979AD95D7225032C5F1F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,14 +188,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "sitio_christian_app" */;
 			buildPhases = (
-				D863309A59D83C88094955D3 /* [CP] Check Pods Manifest.lock */,
+				7273410BEAA5A51657026326 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				8741F49FEEA432B7F98D721A /* [CP] Embed Pods Frameworks */,
-				82DB0DD260E40D2B0BAC0B63 /* [CP] Copy Pods Resources */,
+				0E149EA214A58B54187B0DF9 /* [CP] Embed Pods Frameworks */,
+				88806D86098ABD1FD9BDEF64 /* [CP] Copy Pods Resources */,
+				5B1E47E3AEA4462652B4CF7B /* [CP-User] [RNFB] Core Configuration */,
 			);
 			buildRules = (
 			);
@@ -305,22 +258,6 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				52EB1211260FE30700FC464B /* GoogleService-Info.plist in Resources */,
-				0DAD2C7B76BE4F14A852C264 /* AntDesign.ttf in Resources */,
-				0EA6124DB28B43D3BEB7D0FE /* Entypo.ttf in Resources */,
-				6E344217BEF345F2BFB03D4C /* EvilIcons.ttf in Resources */,
-				24D2D6626A0B434784C8D9C4 /* Feather.ttf in Resources */,
-				7425C589C54B41E796B9C4CE /* FontAwesome.ttf in Resources */,
-				864D1CC973B54D479BEE28BB /* FontAwesome5_Brands.ttf in Resources */,
-				AA14496ACFEC493683D4B5DB /* FontAwesome5_Regular.ttf in Resources */,
-				D998963476324DBA9760604C /* FontAwesome5_Solid.ttf in Resources */,
-				76BFA96F73DC40E79A9F9A66 /* Fontisto.ttf in Resources */,
-				4FF7E622308149C8971448C6 /* Foundation.ttf in Resources */,
-				30A6A90692BB44A191172A3A /* Ionicons.ttf in Resources */,
-				AAB90AC80AB34CBDB2C4EB3B /* MaterialCommunityIcons.ttf in Resources */,
-				E677900F1CD54B25950B5E89 /* MaterialIcons.ttf in Resources */,
-				554F564679484BB9997DBC39 /* Octicons.ttf in Resources */,
-				7099C39B9472445B98B8D2CD /* SimpleLineIcons.ttf in Resources */,
-				1872EA2F302348A48F077AB5 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,46 +278,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		2B95BC28F95E6E1960AB024A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-sitio_christian_app-sitio_christian_appTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		82DB0DD260E40D2B0BAC0B63 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app/Pods-sitio_christian_app-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app/Pods-sitio_christian_app-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app/Pods-sitio_christian_app-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8741F49FEEA432B7F98D721A /* [CP] Embed Pods Frameworks */ = {
+		0E149EA214A58B54187B0DF9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,7 +295,34 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app/Pods-sitio_christian_app-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9125C2C5F5667AC8A4D7BEE5 /* [CP] Embed Pods Frameworks */ = {
+		10C979AD95D7225032C5F1F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B1E47E3AEA4462652B4CF7B /* [CP-User] [RNFB] Core Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] [RNFB] Core Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    _JSON_OUTPUT_BASE64=$(python -c 'import json,sys,base64;print(base64.b64encode(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"').read())['${_JSON_ROOT}'])))' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.analytics_auto_collection_enabled\n  _ANALYTICS_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_auto_collection_enabled\")\n  if [[ $_ANALYTICS_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_COLLECTION\")\")\n  fi\n\n  # config.perf_auto_collection_enabled\n  _PERF_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_auto_collection_enabled\")\n  if [[ $_PERF_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_AUTO_COLLECTION\")\")\n  fi\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes useful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"FirebaseCrashlyticsCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\n\n  # config.admob_delay_app_measurement_init\n  _ADMOB_DELAY_APP_MEASUREMENT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"admob_delay_app_measurement_init\")\n  if [[ $_ADMOB_DELAY_APP_MEASUREMENT == \"true\" ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GADDelayAppMeasurementInit\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"YES\")\n  fi\n\n  # config.admob_ios_app_id\n  _ADMOB_IOS_APP_ID=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"admob_ios_app_id\")\n  if [[ $_ADMOB_IOS_APP_ID ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GADApplicationIdentifier\")\n    _PLIST_ENTRY_TYPES+=(\"string\")\n    _PLIST_ENTRY_VALUES+=(\"$_ADMOB_IOS_APP_ID\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally\n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n";
+		};
+		6479FB09B39C6B7BEBE64AB0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -414,7 +339,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D863309A59D83C88094955D3 /* [CP] Check Pods Manifest.lock */ = {
+		7273410BEAA5A51657026326 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -436,21 +361,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EF6189B16225196658567C76 /* [CP] Copy Pods Resources */ = {
+		88806D86098ABD1FD9BDEF64 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app/Pods-sitio_christian_app-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app/Pods-sitio_christian_app-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sitio_christian_app/Pods-sitio_christian_app-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90318F1C4525097FB055745F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sitio_christian_app-sitio_christian_appTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -505,7 +452,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B9C9ADBF10624FAC1D6CE67 /* Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig */;
+			baseConfigurationReference = 685A9E5700C3317AB1E9B529 /* Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -532,7 +479,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AA961B98E137C0186A12977 /* Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig */;
+			baseConfigurationReference = D1B297E94E71538FB46AD273 /* Pods-sitio_christian_app-sitio_christian_appTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -556,7 +503,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF03EA2E68611951DCF9DDD5 /* Pods-sitio_christian_app.debug.xcconfig */;
+			baseConfigurationReference = F25511B37B0EE52A7E2935EB /* Pods-sitio_christian_app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -583,7 +530,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC24BD9F06F3F05F69E3A09C /* Pods-sitio_christian_app.release.xcconfig */;
+			baseConfigurationReference = BD63ABA373DCA61F1F06BBEF /* Pods-sitio_christian_app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
