@@ -1,6 +1,0 @@
-{
-    "hooks": {
-        "applypatch-msg": "echo \" applypatch-msg\"",
-        "pre-commit": "lint-staged"
-    }
-}
