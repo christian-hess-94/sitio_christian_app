@@ -1,9 +1,12 @@
-interface remoteConfigDefaultParams {
-  test_feature: string;
-}
+export type remoteConfigDefaultParams = {
+  [key in remoteConfigEnum]: string;
+};
 
+export enum remoteConfigEnum {
+  teste_parametro = 'teste_parametro',
+}
 const remoteConfigDefaultValues: remoteConfigDefaultParams = {
-  test_feature: 'Valor',
+  [remoteConfigEnum.teste_parametro]: 'Valor padrão',
 };
 
 export default remoteConfigDefaultValues;
