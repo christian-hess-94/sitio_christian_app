@@ -8,7 +8,7 @@ export interface LoginScreenProps {}
 const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = () => {
   return (
     <View>
-      <Text>Login screen</Text>
+      <Text>Login Screen</Text>
     </View>
   );
 };
