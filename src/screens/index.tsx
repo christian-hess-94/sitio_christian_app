@@ -7,7 +7,7 @@ interface ScreenProps {}
 
 export type StackScreenNames = {
   Splash: SplashScreenProps;
-  Login: undefined;
+  Login: LoginScreenProps;
 };
 
 const Screens: React.FC<ScreenProps> = () => {
