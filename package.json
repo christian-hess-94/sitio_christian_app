@@ -9,11 +9,6 @@
     "test": "jest --verbose",
     "lint": "eslint ./src"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
-  },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/core": "^5.15.2",

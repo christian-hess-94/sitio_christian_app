@@ -1,6 +1,6 @@
 {
     "*.ts":[
-        "yarn lint --fix",
+        "lint 'src/**' --fix",
         "git add"
     ]
 }
