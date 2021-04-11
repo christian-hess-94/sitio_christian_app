@@ -9,7 +9,6 @@ export interface SplashScreenProps {}
 const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
   navigation: {reset},
 }) => {
-  //comment
   return (
     <SplashScreenContainer>
       <AppLogo />
