@@ -20,9 +20,7 @@ const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
   ] = useState<remoteConfigDefaultParams>(remoteConfigDefaultValues);
 
   const connectRemoteConfig = async () => {
-    await remoteConfig().setDefaults({
-      teste_parametro: 'disabled',
-    });
+    await remoteConfig().setDefaults(remoteConfigDefaultValues);
     console.log('Setou defaults');
     await remoteConfig().fetch(5);
     await remoteConfig().activate();
