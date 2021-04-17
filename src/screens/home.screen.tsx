@@ -6,6 +6,7 @@ import {StackScreenNames} from '.';
 export interface LoginScreenProps {}
 
 const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = () => {
+  //comment
   return (
     <View>
       <Text>Login Screen</Text>
