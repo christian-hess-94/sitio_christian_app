@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import React, {useEffect, useState} from 'react';
 import {View, Text} from 'react-native';
@@ -19,21 +20,20 @@ const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
     setRemoteConfigData,
   ] = useState<remoteConfigDefaultParams>(remoteConfigDefaultValues);
 
-  const connectRemoteConfig = async () => {
-    await remoteConfig().setDefaults(remoteConfigDefaultValues);
-    console.log('Setou defaults');
-    await remoteConfig().fetch(5);
-    await remoteConfig().activate();
-    const teste_parametro = remoteConfig()
-      .getValue(remoteConfigEnum.teste_parametro)
-      .asString();
-    const pagina_ativa = remoteConfig()
-      .getValue(remoteConfigEnum.pagina_ativa)
-      .asBoolean();
-    setRemoteConfigData({teste_parametro, pagina_ativa});
-  };
-
   useEffect(() => {
+    const connectRemoteConfig = async () => {
+      await remoteConfig().setDefaults(remoteConfigDefaultValues);
+      console.log('Setou defaults');
+      await remoteConfig().fetch(5);
+      await remoteConfig().activate();
+      const teste_parametro = remoteConfig()
+        .getValue(remoteConfigEnum.teste_parametro)
+        .asString();
+      const pagina_ativa = remoteConfig()
+        .getValue(remoteConfigEnum.pagina_ativa)
+        .asBoolean();
+      setRemoteConfigData({teste_parametro, pagina_ativa});
+    };
     connectRemoteConfig();
   }, []);
 
