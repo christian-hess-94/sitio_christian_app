@@ -12,6 +12,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		360BCB299A10829073487959 /* libPods-sitio_christian_app-sitio_christian_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 839910B0C006DF5C8AAC4C5B /* libPods-sitio_christian_app-sitio_christian_appTests.a */; };
+		52A7F8C2262B36E70098754A /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A7F8BB262B36CC0098754A /* libCodePush.a */; };
+		52A7F8C4262B36FA0098754A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A7F8C3262B36FA0098754A /* libz.tbd */; };
 		52EB1211260FE30700FC464B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52EB1210260FE30700FC464B /* GoogleService-Info.plist */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		FBB05B991EDFC5F52BBBB4A2 /* libPods-sitio_christian_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3578E85E9D3CDBADAAD67FCD /* libPods-sitio_christian_app.a */; };
@@ -24,6 +26,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = sitio_christian_app;
+		};
+		52A7F8BA262B36CC0098754A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52A7F8B5262B36CB0098754A /* CodePush.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = CodePush;
+		};
+		52A7F8BC262B36CC0098754A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52A7F8B5262B36CB0098754A /* CodePush.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F886647B1F4ADB500036D01B;
+			remoteInfo = "CodePush-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -38,6 +54,8 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = sitio_christian_app/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = sitio_christian_app/main.m; sourceTree = "<group>"; };
 		3578E85E9D3CDBADAAD67FCD /* libPods-sitio_christian_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sitio_christian_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52A7F8B5262B36CB0098754A /* CodePush.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
+		52A7F8C3262B36FA0098754A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		52EB1210260FE30700FC464B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		685A9E5700C3317AB1E9B529 /* Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig"; path = "Target Support Files/Pods-sitio_christian_app-sitio_christian_appTests/Pods-sitio_christian_app-sitio_christian_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = sitio_christian_app/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,7 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A7F8C4262B36FA0098754A /* libz.tbd in Frameworks */,
 				FBB05B991EDFC5F52BBBB4A2 /* libPods-sitio_christian_app.a in Frameworks */,
+				52A7F8C2262B36E70098754A /* libCodePush.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +133,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52A7F8C3262B36FA0098754A /* libz.tbd */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				3578E85E9D3CDBADAAD67FCD /* libPods-sitio_christian_app.a */,
 				839910B0C006DF5C8AAC4C5B /* libPods-sitio_christian_app-sitio_christian_appTests.a */,
@@ -120,9 +141,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		52A7F8B6262B36CB0098754A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52A7F8BB262B36CC0098754A /* libCodePush.a */,
+				52A7F8BD262B36CC0098754A /* libCodePush.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				52A7F8B5262B36CB0098754A /* CodePush.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -157,7 +188,6 @@
 			children = (
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +265,12 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 52A7F8B6262B36CB0098754A /* Products */;
+					ProjectRef = 52A7F8B5262B36CB0098754A /* CodePush.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* sitio_christian_app */,
@@ -242,6 +278,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		52A7F8BB262B36CC0098754A /* libCodePush.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCodePush.a;
+			remoteRef = 52A7F8BA262B36CC0098754A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52A7F8BD262B36CC0098754A /* libCodePush.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCodePush.a;
+			remoteRef = 52A7F8BC262B36CC0098754A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00E356EC1AD99517003FC87E /* Resources */ = {
