@@ -9,12 +9,14 @@ import remoteConfigDefaultValues, {
   remoteConfigEnum,
 } from '../defaults/remoteConfig';
 import remoteConfig from '@react-native-firebase/remote-config';
+import {getConfigValue} from '../utils/remoteConfig.util';
 
 export interface LoginScreenProps {}
 
 const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
   navigation: {navigate},
 }) => {
+  getConfigValue(remoteConfigEnum.pagina_ativa);
   const [
     {teste_parametro, pagina_ativa},
     setRemoteConfigData,
@@ -26,12 +28,14 @@ const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
       console.log('Setou defaults');
       await remoteConfig().fetch(5);
       await remoteConfig().activate();
-      const teste_parametro = remoteConfig()
-        .getValue(remoteConfigEnum.teste_parametro)
-        .asString();
-      const pagina_ativa = remoteConfig()
-        .getValue(remoteConfigEnum.pagina_ativa)
-        .asBoolean();
+      const pagina_ativa = getConfigValue({
+        varName: remoteConfigEnum.pagina_ativa,
+        as: 'boolean',
+      });
+      const teste_parametro = getConfigValue({
+        varName: remoteConfigEnum.teste_parametro,
+        as: 'string',
+      });
       setRemoteConfigData({teste_parametro, pagina_ativa});
     };
     connectRemoteConfig();
