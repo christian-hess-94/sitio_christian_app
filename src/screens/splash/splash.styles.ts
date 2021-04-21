@@ -1,18 +1,19 @@
 import styled from 'styled-components/native';
-import {SharkProfileSVG} from '../../assets';
+import {LogoSVG} from '../../assets';
 import {ProgressBar} from 'react-native-paper';
+import {Dimensions} from 'react-native';
 export const SplashScreenContainer = styled.SafeAreaView`
-  background-color: ${({theme}) => theme.colors.secondary};
+  background-color: ${({theme}) => theme.colors.primary};
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
 `;
 
-export const AppLogo = styled(SharkProfileSVG).attrs(({theme}) => ({
-  height: 140,
-  width: 140,
-  color: theme.colors.terciary,
+export const AppLogo = styled(LogoSVG).attrs(({theme}) => ({
+  height: 240,
+  width: 240,
+  color: theme.colors.secondary,
 }))``;
 
 interface ConfigProgressBarProps {
@@ -27,5 +28,7 @@ export const ConfigProgressBar = styled(
   color: '#fff',
   onAnimationEnd: taskIndex === total && onProgressCompleted(),
 }))<ConfigProgressBarProps>`
-  width: 100px;
+  width: ${Dimensions.get('screen').width * 0.7}px;
+  height: ${({theme}) => theme.spacings.medium}px;
+  border-radius: ${({theme}) => theme.spacings.medium}px;
 `;

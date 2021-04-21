@@ -7,7 +7,6 @@ import {
 } from './splash.styles';
 import {StackScreenNames} from '..';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
-import {Text} from 'react-native-paper';
 import {AsyncTask, execTasks} from '../../utils/asyncTask.util';
 import {
   fetchAndActivateConfig,
@@ -46,9 +45,6 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
   return (
     <SplashScreenContainer>
       <AppLogo />
-      <Text>
-        {taskIndex} / {tasksToDo}
-      </Text>
       <ConfigProgressBar
         total={tasksToDo}
         taskIndex={taskIndex}
