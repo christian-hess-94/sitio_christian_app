@@ -1,4 +1,3 @@
-/* eslint-disable no-shadow */
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import React from 'react';
 import {View, Text} from 'react-native';

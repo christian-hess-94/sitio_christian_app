@@ -7,15 +7,27 @@ export interface AsyncTask {
   isAsync?: boolean;
 }
 
-export const execTasks = async (
-  tasks: AsyncTask[],
-  onBeforeAllTasks: () => void,
-  onCompleteAllTasks: () => void,
-) => {
-  onBeforeAllTasks();
+interface ExecTasksParam {
+  tasks: AsyncTask[];
+  taskIndex: number;
+  onBeforeAllTasks?: () => void;
+  onCompleteAllTasks?: () => void;
+}
+export const execTasks = async ({
+  tasks,
+  taskIndex,
+  onBeforeAllTasks,
+  onCompleteAllTasks,
+}: ExecTasksParam) => {
+  onBeforeAllTasks && onBeforeAllTasks();
   try {
-    tasks.forEach(async task => await execTask(task));
-    onCompleteAllTasks();
+    // tasks.forEach(async task =>
+    //   task.isAsync ? await execTask(task) : execTask(task),
+    // );
+    execTask(tasks[taskIndex]);
+    if (taskIndex === tasks.length - 1) {
+      onCompleteAllTasks && onCompleteAllTasks();
+    }
   } catch (error) {
     return error;
   }
@@ -26,7 +38,7 @@ export const execTask = async (TASK: AsyncTask) => {
   console.log(name ? `[${name}] Executing task` : 'Executing nameless task');
   onStart && onStart();
   try {
-    let data = undefined;
+    let data;
     if (isAsync) {
       data = await task();
     } else {
