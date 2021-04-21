@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import {SharkProfileSVG} from '../../assets';
-import {ProgressBar, Progress} from 'react-native-paper';
+import {ProgressBar} from 'react-native-paper';
 export const SplashScreenContainer = styled.SafeAreaView`
   background-color: ${({theme}) => theme.colors.secondary};
   width: 100%;
