@@ -54,7 +54,7 @@ platform :android do
     push_to_git_remote(force: true, no_verify:true)
     sh("git", "checkout", "main")
     sh("git", "merge", "master")
-    push_to_git_remote(force: true, no_verify:true)
+    push_to_git_remote(force: true, no_verify:true, remote: "origin",local_branch: "main",remote_branch: "main",)
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
