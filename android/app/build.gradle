@@ -136,8 +136,8 @@ android {
         applicationId "com.sitio_christian_app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 9
-        versionName "1.0.10"
+        versionCode 10
+        versionName "1.0.11"
     }
     splits {
         abi {
