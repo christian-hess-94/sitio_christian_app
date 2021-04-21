@@ -16,7 +16,6 @@ export interface LoginScreenProps {}
 const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
   navigation: {navigate},
 }) => {
-  getConfigValue(remoteConfigEnum.pagina_ativa);
   const [
     {teste_parametro, pagina_ativa},
     setRemoteConfigData,
