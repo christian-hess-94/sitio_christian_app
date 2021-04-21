@@ -1,29 +1,40 @@
-interface AsyncTask {
+export interface AsyncTask {
+  name?: string;
   task: () => void;
-  onStart: () => void;
-  onComplete: () => void;
-  onFail: (error: any) => void;
+  onStart?: () => void;
+  onComplete?: (data: any | undefined) => void;
+  onFail?: (error: any) => void;
   isAsync?: boolean;
 }
 
-const execTask = async ({
-  onStart,
-  onComplete,
-  onFail,
-  task,
-  isAsync,
-}: AsyncTask) => {
-  onStart();
+export const execTasks = async (
+  tasks: AsyncTask[],
+  onBeforeAllTasks: () => void,
+  onCompleteAllTasks: () => void,
+) => {
+  onBeforeAllTasks();
   try {
-    if (isAsync) {
-      await task();
-    } else {
-      task();
-    }
-    onComplete();
+    tasks.forEach(async task => await execTask(task));
+    onCompleteAllTasks();
   } catch (error) {
-    onFail(error);
+    return error;
   }
 };
 
-export default execTask;
+export const execTask = async (TASK: AsyncTask) => {
+  const {onStart, onComplete, onFail, task, isAsync, name} = TASK;
+  console.log(name ? `[${name}] Executing task` : 'Executing nameless task');
+  onStart && onStart();
+  try {
+    let data = undefined;
+    if (isAsync) {
+      data = await task();
+    } else {
+      data = task();
+    }
+    console.log(name ? `[${name}] Completed task` : 'Completed nameless task');
+    onComplete && onComplete(data);
+  } catch (error) {
+    onFail && onFail(error);
+  }
+};
