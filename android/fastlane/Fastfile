@@ -52,6 +52,8 @@ platform :android do
     sh("git", "config", "--global", "user.email", git_email) if git_email
     git_commit(path: "*", message: "Version Bump",skip_git_hooks: true)
     push_to_git_remote(force: true, no_verify:true)
+    sh("git", "checkout", "main")
+    sh("git", "merge", "master")
   end
 
   desc "Submit a new Beta Build to Crashlytics Beta"
