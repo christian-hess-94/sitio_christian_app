@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">sitio_christian_app</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">QpXxS952khp-uI_xSG-ZOdF5DiME3z-K1nAwn</string>
 </resources>
