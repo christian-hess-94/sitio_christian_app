@@ -27,12 +27,13 @@ platform :android do
 
     #Garante que existam essas variaveis no .env
     ensure_env_vars(
-      env_vars:['FIREBASE_TOKEN', "FIREBASE_APP_ID", "GITHUB_USERNAME"]
+      env_vars:['FIREBASE_TOKEN', "FIREBASE_APP_ID", "GITHUB_USERNAME", "GITHUB_EMAIL"]
     )
     #recupera as variaveis de ambiente do .env
     firebase_token = ENV['FIREBASE_TOKEN']
     app_id = ENV['FIREBASE_APP_ID']
     git_username = ENV['GITHUB_USERNAME']
+    git_email = ENV['GITHUB_EMAIL']
 
     bump_version
     build_release_apk
@@ -47,6 +48,8 @@ platform :android do
       release_notes: release_notes,
     })
 
+    sh("git", "config", "--global", "user.name", git_username) if git_username
+    sh("git", "config", "--global", "user.email", git_email) if git_email
     git_commit(path: "*", message: "Version Bump",skip_git_hooks: true)
     push_to_git_remote(force: true, no_verify:true)
   end
