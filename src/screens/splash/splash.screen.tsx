@@ -8,7 +8,7 @@ import {
 import {StackScreenNames} from '..';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {Text} from 'react-native-paper';
-import {AsyncTask, execTask, execTasks} from '../../utils/asyncTask.util';
+import {AsyncTask, execTasks} from '../../utils/asyncTask.util';
 import {
   fetchAndActivateConfig,
   setRemoteConfigDefaults,
@@ -37,7 +37,6 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
 
   useEffect(() => {
     if (taskIndex < tasksToDo) {
-      execTask(tasks[taskIndex]);
       execTasks({
         tasks,
         taskIndex,

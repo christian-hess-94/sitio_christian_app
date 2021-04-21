@@ -21,9 +21,6 @@ export const execTasks = async ({
 }: ExecTasksParam) => {
   onBeforeAllTasks && onBeforeAllTasks();
   try {
-    // tasks.forEach(async task =>
-    //   task.isAsync ? await execTask(task) : execTask(task),
-    // );
     execTask(tasks[taskIndex]);
     if (taskIndex === tasks.length - 1) {
       onCompleteAllTasks && onCompleteAllTasks();
