@@ -48,6 +48,7 @@ import DuckProfileSVG from './icons/profile/047-duck.svg';
 import OstrichProfileSVG from './icons/profile/048-ostrich.svg';
 import BearProfileSVG from './icons/profile/049-bear.svg';
 import FrogProfileSVG from './icons/profile/050-frog.svg';
+import LogoSVG from './icons/Logo1.svg';
 
 export {
   SharkProfileSVG,
@@ -100,4 +101,5 @@ export {
   OstrichProfileSVG,
   BearProfileSVG,
   FrogProfileSVG,
+  LogoSVG,
 };
