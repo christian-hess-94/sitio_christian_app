@@ -48,8 +48,8 @@ const ProgressBackground: React.FC<ProgressBackgroundProps> = props => {
     <PBGBackground
       style={{
         borderRadius: progressAnimation?.current.interpolate({
-          inputRange: [0, PROGRESS_BAR_WIDTH],
-          outputRange: [PROGRESS_BAR_HEIGHT, 0],
+          inputRange: [0, PROGRESS_BAR_WIDTH / 2, PROGRESS_BAR_WIDTH],
+          outputRange: [PROGRESS_BAR_HEIGHT, PROGRESS_BAR_WIDTH, 0],
         }),
       }}>
       <PBGFill
