@@ -1,7 +1,6 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import {View, Text} from 'react-native';
-import LoginScreen, {LoginScreenProps} from './home.screen';
+import LoginScreen, {LoginScreenProps} from './login/login.screen';
 import SplashScreen, {SplashScreenProps} from './splash/splash.screen';
 
 interface ScreenProps {}
@@ -9,7 +8,6 @@ interface ScreenProps {}
 export type StackScreenNames = {
   Splash: SplashScreenProps;
   Login: LoginScreenProps;
-  Pagina: undefined;
 };
 
 const Screens: React.FC<ScreenProps> = () => {
@@ -22,19 +20,7 @@ const Screens: React.FC<ScreenProps> = () => {
         options={{animationEnabled: false, headerShown: false}}
       />
       <Screen name="Login" options={{title: 'Login'}} component={LoginScreen} />
-      <Screen
-        name="Pagina"
-        options={{title: 'Página que vai sumir'}}
-        component={Paginaquevaisumir}
-      />
     </Navigator>
-  );
-};
-const Paginaquevaisumir = () => {
-  return (
-    <View>
-      <Text>PAGINA QUE VAI SUMIR</Text>
-    </View>
   );
 };
 export default Screens;
