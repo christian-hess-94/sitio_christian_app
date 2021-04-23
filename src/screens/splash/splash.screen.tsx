@@ -1,6 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import {AppLogo, SplashScreenContainer} from './splash.styles';
+import ProgressBackground, {
+  AppLogo,
+  SplashScreenContainer,
+} from './splash.styles';
 import {StackScreenNames} from '..';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {AsyncTask, execTask} from '../../utils/asyncTask.util';
@@ -8,7 +11,6 @@ import {
   fetchAndActivateConfig,
   setRemoteConfigDefaults,
 } from '../../tasks/remoteConfig.tasks';
-import ProgressBar from '../../components/progressBar';
 export interface SplashScreenProps {}
 
 const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
@@ -55,12 +57,12 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
   };
   return (
     <SplashScreenContainer>
-      <AppLogo />
-      <ProgressBar
+      <ProgressBackground
         taskIndex={taskIndex}
         tasksToDo={tasksToDo}
         onAnimationEnd={initApp}
       />
+      <AppLogo />
     </SplashScreenContainer>
   );
 };
