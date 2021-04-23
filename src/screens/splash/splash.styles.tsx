@@ -17,6 +17,7 @@ export const AppLogo = styled(LogoSVG).attrs(({theme}) => ({
 }))``;
 
 const PROGRESS_BAR_WIDTH = Dimensions.get('screen').width;
+const PROGRESS_BAR_HEIGHT = Dimensions.get('screen').height;
 
 interface ProgressBackgroundProps {
   taskIndex: number;
@@ -27,14 +28,11 @@ interface ProgressBackgroundFillProps {
   taskIndex: any;
 }
 
-const PBGBackground = styled.View`
+const PBGBackground = styled(Animated.View)`
   background-color: ${({theme}) => theme.colors.primary};
-  height: 100%;
   position: absolute;
 `;
-const PBGFill = styled(Animated.View)<ProgressBackgroundFillProps>`
-  height: 100%;
-`;
+const PBGFill = styled(Animated.View)<ProgressBackgroundFillProps>``;
 
 const ProgressBackground: React.FC<ProgressBackgroundProps> = props => {
   const {onAnimationEnd, taskIndex, tasksToDo} = props;
@@ -47,11 +45,24 @@ const ProgressBackground: React.FC<ProgressBackgroundProps> = props => {
     }).start(() => onAnimationEnd());
   }, [taskIndex, onAnimationEnd, tasksToDo]);
   return (
-    <PBGBackground>
+    <PBGBackground
+      style={{
+        borderRadius: progressAnimation?.current.interpolate({
+          inputRange: [0, PROGRESS_BAR_WIDTH],
+          outputRange: [PROGRESS_BAR_HEIGHT, 0],
+        }),
+      }}>
       <PBGFill
         taskIndex={progressAnimation.current}
         style={{
-          width: progressAnimation?.current || 0,
+          width: progressAnimation?.current.interpolate({
+            inputRange: [0, PROGRESS_BAR_WIDTH],
+            outputRange: [0, PROGRESS_BAR_HEIGHT],
+          }),
+          height: progressAnimation?.current.interpolate({
+            inputRange: [0, PROGRESS_BAR_WIDTH],
+            outputRange: [0, PROGRESS_BAR_HEIGHT],
+          }),
         }}
       />
     </PBGBackground>
