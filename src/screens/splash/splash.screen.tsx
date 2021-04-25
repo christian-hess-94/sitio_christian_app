@@ -34,7 +34,6 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
       isAsync: true,
       onComplete: () => {
         setTaskIndex(taskIndex + 1);
-        console.log('task length', tasks.length);
         setProgress(progress + 100 / tasks.length);
       },
     },
@@ -43,8 +42,6 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
   const [tasksToDo] = useState(tasks.length);
 
   useEffect(() => {
-    console.log(taskIndex);
-    console.log(progress);
     if (taskIndex < tasksToDo) {
       execTask(tasks[taskIndex]);
     }
