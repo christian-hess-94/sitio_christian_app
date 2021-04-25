@@ -10,8 +10,8 @@ export const AppLightTheme = {
   ...PaperLightTheme,
   ...NavigationLightTheme,
   colors: {
-    ...PaperLightTheme.colors,
     ...NavigationLightTheme.colors,
+    ...PaperLightTheme.colors,
   },
 };
 
@@ -19,7 +19,17 @@ export const AppDarkTheme = {
   ...PaperDarkTheme,
   ...NavigationDarkTheme,
   colors: {
-    ...PaperDarkTheme.colors,
     ...NavigationDarkTheme.colors,
+    ...PaperDarkTheme.colors,
   },
 };
+
+interface Themes {
+  light: typeof AppLightTheme;
+  dark: typeof AppDarkTheme;
+}
+const AvailableThemes: Themes = {
+  light: AppLightTheme,
+  dark: AppDarkTheme,
+};
+export default AvailableThemes;

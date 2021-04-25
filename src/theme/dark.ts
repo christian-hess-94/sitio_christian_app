@@ -1,11 +1,14 @@
 import {DefaultTheme} from 'styled-components';
 import {DefaultTheme as PaperTheme} from 'react-native-paper';
-const PaperDarkTheme: DefaultTheme & typeof PaperTheme = {
+import {Theme} from '@react-navigation/native';
+const PaperDarkTheme: DefaultTheme & typeof PaperTheme & Theme = {
   ...PaperTheme,
   colors: {
     ...PaperTheme.colors,
     primary: '#30CA77',
     accent: '#F05E81',
+    border: '#535161',
+    card: '#A4A3AF',
     terciary: '#F5B308',
     status: {
       success: '#30CA77',
@@ -14,14 +17,14 @@ const PaperDarkTheme: DefaultTheme & typeof PaperTheme = {
     },
     disabled: '#A4A3AF',
     backdrop: '#535161',
-    background: '#EEEDF1',
-    surface: '#FFFFFF',
+    background: '#535161',
+    surface: '#535161',
     error: '#F05E81',
     notification: '#30CA77',
     onBackground: '#EEEDF1',
     onSurface: '#535161',
     placeholder: '#A4A3AF',
-    text: '#535161',
+    text: '#FFFFFF',
   },
   fonts: {
     ...PaperTheme.fonts,

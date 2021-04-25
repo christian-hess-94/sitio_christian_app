@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 //Interface com os dados do usuario que está logado no sistema
 export interface User {
   ready: boolean;
+  theme: 'light' | 'dark';
 }
 //Logica para alterar e recuperar os dados do usuario em outras telas
 type UserLogic = {
@@ -11,6 +12,7 @@ type UserLogic = {
 //Usuário padrão quando o app inicia
 const defaultUser: User = {
   ready: true,
+  theme: 'light',
 };
 //Contexto a ser usado pelos Hooks para recuperar os dados do usuario
 export const UserContext = React.createContext<UserLogic>({
