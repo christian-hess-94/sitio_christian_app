@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import ProgressBackground, {
   AppLogo,
   SplashScreenContainer,
@@ -11,11 +11,18 @@ import {
   fetchAndActivateConfig,
   setRemoteConfigDefaults,
 } from '../../tasks/remoteConfig.tasks';
+import {Alert, useColorScheme} from 'react-native';
+import {UserContext} from '../../context/user.context';
 export interface SplashScreenProps {}
 
 const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
   navigation: {reset},
 }) => {
+  const {
+    user: {theme},
+    setUser,
+  } = useContext(UserContext);
+  const colorScheme = useColorScheme();
   const [progress, setProgress] = useState(0);
   const [taskIndex, setTaskIndex] = useState(0);
   const tasks: AsyncTask[] = [
@@ -34,7 +41,30 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
       isAsync: true,
       onComplete: () => {
         setTaskIndex(taskIndex + 1);
-        console.log('task length', tasks.length);
+        setProgress(progress + 100 / tasks.length);
+      },
+    },
+    {
+      name: 'Verify appTheme and currentTheme',
+      task: () => {
+        if (colorScheme !== theme) {
+          Alert.alert(
+            'Temas diferentes',
+            `Deseja configurar o app com o mesmo tema do seu celular (${colorScheme})?`,
+            [
+              {text: `Manter tema ${theme}`, style: 'cancel'},
+              {
+                text: `Usar tema ${colorScheme}`,
+                style: 'default',
+                onPress: () => setUser({theme: colorScheme, ready: true}),
+              },
+            ],
+          );
+          return;
+        }
+      },
+      onComplete: () => {
+        setTaskIndex(taskIndex + 1);
         setProgress(progress + 100 / tasks.length);
       },
     },
@@ -43,8 +73,6 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
   const [tasksToDo] = useState(tasks.length);
 
   useEffect(() => {
-    console.log(taskIndex);
-    console.log(progress);
     if (taskIndex < tasksToDo) {
       execTask(tasks[taskIndex]);
     }
