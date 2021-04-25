@@ -50,14 +50,14 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
         if (colorScheme !== theme) {
           Alert.alert(
             'Temas diferentes',
-            `O tema do seu telefone é: ${colorScheme}.\n O tema na sua conta é: ${theme}. Deseja alterar o tema configurado?`,
+            `Deseja configurar o app com o mesmo tema do seu celular (${colorScheme})?`,
             [
+              {text: `Manter tema ${theme}`, style: 'cancel'},
               {
-                text: `Alterar para tema ${colorScheme}`,
+                text: `Usar tema ${colorScheme}`,
                 style: 'default',
                 onPress: () => setUser({theme: colorScheme, ready: true}),
               },
-              {text: `Manter tema ${theme}`, style: 'cancel'},
             ],
           );
           return;

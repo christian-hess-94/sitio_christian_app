@@ -1,12 +1,15 @@
 import {DefaultTheme} from 'styled-components';
 import {DefaultTheme as PaperTheme} from 'react-native-paper';
-const PaperLightTheme: DefaultTheme & typeof PaperTheme = {
+import {Theme} from '@react-navigation/native';
+const PaperLightTheme: DefaultTheme & typeof PaperTheme & Theme = {
   ...PaperTheme,
   colors: {
     ...PaperTheme.colors,
     primary: '#30CA77',
     accent: '#F05E81',
     terciary: '#F5B308',
+    card: '#EEEDF1',
+    border: '#EEEDF1',
     status: {
       success: '#30CA77',
       info: '#00BBBB',

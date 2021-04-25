@@ -8,7 +8,7 @@ const PaperDarkTheme: DefaultTheme & typeof PaperTheme & Theme = {
     primary: '#30CA77',
     accent: '#F05E81',
     border: '#535161',
-    card: '#A4A3AF',
+    card: '#535161',
     terciary: '#F5B308',
     status: {
       success: '#30CA77',
@@ -21,7 +21,7 @@ const PaperDarkTheme: DefaultTheme & typeof PaperTheme & Theme = {
     surface: '#535161',
     error: '#F05E81',
     notification: '#30CA77',
-    onBackground: '#EEEDF1',
+    onBackground: '#535161',
     onSurface: '#535161',
     placeholder: '#A4A3AF',
     text: '#FFFFFF',
