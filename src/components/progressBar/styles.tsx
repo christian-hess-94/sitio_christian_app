@@ -6,12 +6,12 @@ import styled from 'styled-components/native';
 const PROGRESS_BAR_WIDTH = Dimensions.get('screen').width - 200;
 
 interface ProgressBarProps {
-  taskIndex: number;
-  tasksToDo: number;
+  current: number;
+  max: number;
   onAnimationEnd: () => void;
 }
 interface ProgressBarFillProps {
-  taskIndex: any;
+  current: any;
 }
 
 const PBBackground = styled.View`
@@ -25,19 +25,19 @@ const PBFill = styled(Animated.View)<ProgressBarFillProps>`
 `;
 
 const ProgressBar: React.FC<ProgressBarProps> = props => {
-  const {onAnimationEnd, taskIndex, tasksToDo} = props;
-  const progressAnimation = useRef(new Animated.Value(taskIndex));
+  const {onAnimationEnd, current, max} = props;
+  const progressAnimation = useRef(new Animated.Value(current));
   useEffect(() => {
     Animated.timing(progressAnimation.current, {
-      toValue: (taskIndex / tasksToDo) * PROGRESS_BAR_WIDTH,
+      toValue: (current / max) * PROGRESS_BAR_WIDTH,
       duration: 1200,
       useNativeDriver: false,
     }).start(() => onAnimationEnd());
-  }, [taskIndex, onAnimationEnd, tasksToDo]);
+  }, [current, onAnimationEnd, max]);
   return (
     <PBBackground>
       <PBFill
-        taskIndex={progressAnimation.current}
+        current={progressAnimation.current}
         style={{width: progressAnimation?.current || 0}}
       />
     </PBBackground>

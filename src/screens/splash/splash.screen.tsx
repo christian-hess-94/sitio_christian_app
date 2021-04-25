@@ -1,21 +1,28 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, {useEffect, useState} from 'react';
+import {Alert, useColorScheme} from 'react-native';
+import {AsyncTask, execTask} from '../../utils/asyncTask.util';
 import ProgressBackground, {
   AppLogo,
   SplashScreenContainer,
 } from './splash.styles';
-import {StackScreenNames} from '..';
-import {StackScreenProps as SSP} from '@react-navigation/stack';
-import {AsyncTask, execTask} from '../../utils/asyncTask.util';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {useContext, useEffect, useState} from 'react';
 import {
   fetchAndActivateConfig,
   setRemoteConfigDefaults,
 } from '../../tasks/remoteConfig.tasks';
+
+import {StackScreenProps as SSP} from '@react-navigation/stack';
+import {StackScreenNames} from '..';
+import {UserContext} from '../../context/user.context';
+
 export interface SplashScreenProps {}
 
 const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
   navigation: {reset},
 }) => {
+  const {user, setUser} = useContext(UserContext);
+  const {theme, ready, info} = user;
+  const colorScheme = useColorScheme();
   const [progress, setProgress] = useState(0);
   const [taskIndex, setTaskIndex] = useState(0);
   const tasks: AsyncTask[] = [
@@ -34,7 +41,41 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
       isAsync: true,
       onComplete: () => {
         setTaskIndex(taskIndex + 1);
-        console.log('task length', tasks.length);
+        setProgress(progress + 100 / tasks.length);
+      },
+    },
+    {
+      name: 'Verify appTheme and currentTheme',
+      task: () => {
+        if (colorScheme !== theme) {
+          Alert.alert(
+            'Temas diferentes',
+            `Deseja configurar o app com o mesmo tema do seu celular (${colorScheme})?`,
+            [
+              {text: `Manter tema ${theme}`, style: 'cancel'},
+              {
+                text: `Usar tema ${colorScheme}`,
+                style: 'default',
+                onPress: () => setUser({...user, theme: colorScheme}),
+              },
+            ],
+          );
+          return;
+        }
+      },
+      onComplete: () => {
+        setTaskIndex(taskIndex + 1);
+        setProgress(progress + 100 / tasks.length);
+      },
+    },
+    {
+      name: 'Wait for firebase response',
+      task: () => {
+        while (!ready) {}
+        return;
+      },
+      onComplete: () => {
+        setTaskIndex(taskIndex + 1);
         setProgress(progress + 100 / tasks.length);
       },
     },
@@ -43,8 +84,6 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
   const [tasksToDo] = useState(tasks.length);
 
   useEffect(() => {
-    console.log(taskIndex);
-    console.log(progress);
     if (taskIndex < tasksToDo) {
       execTask(tasks[taskIndex]);
     }
@@ -52,7 +91,13 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
 
   const initApp = () => {
     if (taskIndex >= tasks.length) {
-      reset({index: 0, routes: [{name: 'Login'}]});
+      if (info) {
+        console.log('Usuário já autenticado no Firebase, indo para Painel');
+        reset({index: 0, routes: [{name: 'Panel'}]});
+      } else {
+        console.log('Usuário não autenticado no Firebase, indo para Login');
+        reset({index: 0, routes: [{name: 'Login'}]});
+      }
     }
   };
   return (
