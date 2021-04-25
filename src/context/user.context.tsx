@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {ThemeNames} from '../theme';
+import {ColorSchemeName} from 'react-native';
 //Interface com os dados do usuario que está logado no sistema
 export interface User {
   ready: boolean;
-  theme: ThemeNames;
+  theme: ColorSchemeName;
 }
 //Logica para alterar e recuperar os dados do usuario em outras telas
 type UserLogic = {
@@ -13,7 +13,7 @@ type UserLogic = {
 //Usuário padrão quando o app inicia
 const defaultUser: User = {
   ready: true,
-  theme: 'no-preference',
+  theme: 'light',
 };
 //Contexto a ser usado pelos Hooks para recuperar os dados do usuario
 export const UserContext = React.createContext<UserLogic>({
