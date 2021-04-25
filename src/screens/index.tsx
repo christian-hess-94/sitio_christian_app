@@ -1,10 +1,10 @@
 import LoginScreen, {LoginScreenProps} from './login/login.screen';
+import PanelScreen, {PanelScreenProps} from './panel/panel.screen';
 import React, {useContext} from 'react';
 import SplashScreen, {SplashScreenProps} from './splash/splash.screen';
 
 import AvailableThemes from '../theme';
 import {NavigationContainer} from '@react-navigation/native';
-import PanelScreen from './panel/panel.screen';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components';
 import {UserContext} from '../context/user.context';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -15,7 +15,7 @@ interface ScreenProps {}
 export type StackScreenNames = {
   Splash: SplashScreenProps;
   Login: LoginScreenProps;
-  Panel: undefined;
+  Panel: PanelScreenProps;
 };
 
 const Screens: React.FC<ScreenProps> = () => {

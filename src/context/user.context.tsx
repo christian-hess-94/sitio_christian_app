@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 
 import {ColorSchemeName} from 'react-native';
-import {FirebaseAuthTypes} from '@react-native-firebase/auth';
-import auth from '@react-native-firebase/auth';
 
 //Interface com os dados do usuario que está logado no sistema
 export interface User {
