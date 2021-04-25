@@ -3,7 +3,7 @@ import {Dimensions, Animated} from 'react-native';
 import styled from 'styled-components/native';
 import {LogoSVG} from '../../assets';
 export const SplashScreenContainer = styled.SafeAreaView`
-  background-color: ${({theme}) => theme.colors.secondary};
+  background-color: ${({theme}) => theme.colors.accent};
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -13,7 +13,7 @@ export const SplashScreenContainer = styled.SafeAreaView`
 export const AppLogo = styled(LogoSVG).attrs(({theme}) => ({
   height: 240,
   width: 240,
-  color: theme.colors.secondary,
+  color: theme.colors.accent,
 }))``;
 
 const PROGRESS_BAR_WIDTH = Dimensions.get('screen').width;

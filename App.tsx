@@ -2,13 +2,13 @@ import React from 'react';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components';
 import {NavigationContainer} from '@react-navigation/native';
 import CodePush, {CodePushOptions} from 'react-native-code-push';
-import appTheme from './src/themes/theme';
 import Screens from './src/screens';
 import UserContextProvider from './src/context/user.context';
+import {AppLightTheme} from './src/theme';
 const App = () => {
   return (
-    <NavigationContainer>
-      <StyledThemeProvider theme={appTheme}>
+    <NavigationContainer theme={AppLightTheme}>
+      <StyledThemeProvider theme={AppLightTheme}>
         <UserContextProvider>
           <Screens />
         </UserContextProvider>
