@@ -24,12 +24,15 @@ export const AppDarkTheme = {
   },
 };
 
-interface Themes {
+interface AppThemes {
   light: typeof AppLightTheme;
   dark: typeof AppDarkTheme;
+  'no-preference': typeof AppLightTheme;
 }
-const AvailableThemes: Themes = {
+export type ThemeNames = keyof AppThemes;
+const AvailableThemes: AppThemes = {
   light: AppLightTheme,
   dark: AppDarkTheme,
+  'no-preference': AppLightTheme,
 };
 export default AvailableThemes;
