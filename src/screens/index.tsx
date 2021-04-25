@@ -1,7 +1,6 @@
 import LoginScreen, {LoginScreenProps} from './login/login.screen';
 import React, {useContext} from 'react';
 import SplashScreen, {SplashScreenProps} from './splash/splash.screen';
-import {Text, View, useColorScheme} from 'react-native';
 
 import AvailableThemes from '../theme';
 import {NavigationContainer} from '@react-navigation/native';
@@ -9,6 +8,7 @@ import PanelScreen from './panel/panel.screen';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components';
 import {UserContext} from '../context/user.context';
 import {createStackNavigator} from '@react-navigation/stack';
+import {useColorScheme} from 'react-native';
 
 interface ScreenProps {}
 
