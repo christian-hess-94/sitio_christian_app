@@ -1,19 +1,12 @@
 import React from 'react';
-import {ThemeProvider as StyledThemeProvider} from 'styled-components';
-import {NavigationContainer} from '@react-navigation/native';
 import CodePush, {CodePushOptions} from 'react-native-code-push';
-import appTheme from './src/themes/theme';
 import Screens from './src/screens';
 import UserContextProvider from './src/context/user.context';
 const App = () => {
   return (
-    <NavigationContainer>
-      <StyledThemeProvider theme={appTheme}>
-        <UserContextProvider>
-          <Screens />
-        </UserContextProvider>
-      </StyledThemeProvider>
-    </NavigationContainer>
+    <UserContextProvider>
+      <Screens />
+    </UserContextProvider>
   );
 };
 const codePushOptions: CodePushOptions = {
