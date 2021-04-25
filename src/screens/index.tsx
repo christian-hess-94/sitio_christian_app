@@ -1,21 +1,21 @@
-import {createStackNavigator} from '@react-navigation/stack';
-
-import {ThemeProvider as StyledThemeProvider} from 'styled-components';
-import {NavigationContainer} from '@react-navigation/native';
-import AvailableThemes from '../theme';
+import LoginScreen, {LoginScreenProps} from './login/login.screen';
+import PanelScreen, {PanelScreenProps} from './panel/panel.screen';
 import React, {useContext} from 'react';
-import {View, Text, useColorScheme} from 'react-native';
-import LoginScreen, {LoginScreenProps} from './home.screen';
 import SplashScreen, {SplashScreenProps} from './splash/splash.screen';
 
+import AvailableThemes from '../theme';
+import {NavigationContainer} from '@react-navigation/native';
+import {ThemeProvider as StyledThemeProvider} from 'styled-components';
 import {UserContext} from '../context/user.context';
+import {createStackNavigator} from '@react-navigation/stack';
+import {useColorScheme} from 'react-native';
 
 interface ScreenProps {}
 
 export type StackScreenNames = {
   Splash: SplashScreenProps;
   Login: LoginScreenProps;
-  Pagina: undefined;
+  Panel: PanelScreenProps;
 };
 
 const Screens: React.FC<ScreenProps> = () => {
@@ -41,20 +41,13 @@ const Screens: React.FC<ScreenProps> = () => {
             component={LoginScreen}
           />
           <Screen
-            name="Pagina"
-            options={{title: 'Página que vai sumir'}}
-            component={Paginaquevaisumir}
+            name="Panel"
+            options={{title: 'Painel'}}
+            component={PanelScreen}
           />
         </Navigator>
       </StyledThemeProvider>
     </NavigationContainer>
-  );
-};
-const Paginaquevaisumir = () => {
-  return (
-    <View>
-      <Text>PAGINA QUE VAI SUMIR</Text>
-    </View>
   );
 };
 export default Screens;
