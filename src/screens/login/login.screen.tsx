@@ -18,7 +18,9 @@ import {useFormik} from 'formik';
 export interface LoginScreenProps {}
 const {Title, Content} = Card;
 
-const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({}) => {
+const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
+  navigation: {reset},
+}) => {
   const {
     values: {email, password, submitting, submittingError},
     handleChange,
@@ -38,9 +40,17 @@ const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({}) => {
       try {
         await auth().createUserWithEmailAndPassword(email, password);
         setFieldValue('submitting', LoadingState.LOADED);
-      } catch (error) {
-        setFieldValue('submittingError', error.code);
-        setFieldValue('submitting', LoadingState.ERROR);
+        reset({index: 0, routes: [{name: 'Panel'}]});
+      } catch (createError) {
+        try {
+          await auth().signInWithEmailAndPassword(email, password);
+          setFieldValue('submitting', LoadingState.LOADED);
+          reset({index: 0, routes: [{name: 'Panel'}]});
+        } catch (loginError) {
+          setFieldValue('submittingError', createError.code);
+          setFieldValue('submitting', LoadingState.ERROR);
+          return;
+        }
       }
     },
     validationSchema: LoginValidationSchema,
