@@ -36,7 +36,7 @@ const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({}) => {
     onSubmit: async ({email, password}, {setFieldValue}) => {
       setFieldValue('submitting', LoadingState.LOADING);
       try {
-        await auth().signInWithEmailAndPassword(email, password);
+        await auth().createUserWithEmailAndPassword(email, password);
         setFieldValue('submitting', LoadingState.LOADED);
       } catch (error) {
         setFieldValue('submittingError', error.code);
