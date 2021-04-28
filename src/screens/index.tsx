@@ -5,6 +5,7 @@ import SplashScreen, {SplashScreenProps} from './splash/splash.screen';
 
 import AvailableThemes from '../theme';
 import {NavigationContainer} from '@react-navigation/native';
+import {Provider as PaperProvider} from 'react-native-paper';
 import {ThemeProvider as StyledThemeProvider} from 'styled-components';
 import {UserContext} from '../context/user.context';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -29,23 +30,25 @@ const Screens: React.FC<ScreenProps> = () => {
       theme={AvailableThemes[theme || colorScheme || 'light']}>
       <StyledThemeProvider
         theme={AvailableThemes[theme || colorScheme || 'light']}>
-        <Navigator initialRouteName="Splash">
-          <Screen
-            name="Splash"
-            component={SplashScreen}
-            options={{animationEnabled: false, headerShown: false}}
-          />
-          <Screen
-            name="Login"
-            options={{title: 'Login'}}
-            component={LoginScreen}
-          />
-          <Screen
-            name="Panel"
-            options={{title: 'Painel'}}
-            component={PanelScreen}
-          />
-        </Navigator>
+        <PaperProvider theme={AvailableThemes[theme || colorScheme || 'light']}>
+          <Navigator initialRouteName="Splash">
+            <Screen
+              name="Splash"
+              component={SplashScreen}
+              options={{animationEnabled: false, headerShown: false}}
+            />
+            <Screen
+              name="Login"
+              options={{title: 'Login', headerShown: false}}
+              component={LoginScreen}
+            />
+            <Screen
+              name="Panel"
+              options={{title: 'Painel'}}
+              component={PanelScreen}
+            />
+          </Navigator>
+        </PaperProvider>
       </StyledThemeProvider>
     </NavigationContainer>
   );
