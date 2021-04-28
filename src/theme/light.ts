@@ -25,6 +25,7 @@ const PaperLightTheme: DefaultTheme & typeof PaperTheme & Theme = {
     onSurface: '#535161',
     placeholder: '#A4A3AF',
     text: '#535161',
+    invertedText: '#EEEDF1',
   },
   fonts: {
     ...PaperTheme.fonts,
