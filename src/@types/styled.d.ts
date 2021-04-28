@@ -6,6 +6,7 @@ interface AppThemeColors {
     info: string;
     warning: string;
   };
+  invertedText: string;
 }
 interface AppFont {
   fontFamily?: string;
