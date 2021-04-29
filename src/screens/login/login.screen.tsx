@@ -40,7 +40,7 @@ const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
       try {
         await auth().createUserWithEmailAndPassword(email, password);
         setFieldValue('submitting', LoadingState.LOADED);
-        reset({index: 0, routes: [{name: 'Panel'}]});
+        reset({index: 0, routes: [{name: 'ChangeProfile'}]});
       } catch (createError) {
         try {
           await auth().signInWithEmailAndPassword(email, password);

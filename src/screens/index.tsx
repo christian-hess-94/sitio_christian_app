@@ -1,3 +1,6 @@
+import ChangeProfileScreen, {
+  ChangeProfileScreenProps,
+} from './changeProfile/changeProfile.screen';
 import LoginScreen, {LoginScreenProps} from './login/login.screen';
 import PanelScreen, {PanelScreenProps} from './panel/panel.screen';
 import React, {useContext} from 'react';
@@ -17,6 +20,7 @@ export type StackScreenNames = {
   Splash: SplashScreenProps;
   Login: LoginScreenProps;
   Panel: PanelScreenProps;
+  ChangeProfile: ChangeProfileScreenProps;
 };
 
 const Screens: React.FC<ScreenProps> = () => {
@@ -46,6 +50,11 @@ const Screens: React.FC<ScreenProps> = () => {
               name="Panel"
               options={{title: 'Painel'}}
               component={PanelScreen}
+            />
+            <Screen
+              name="ChangeProfile"
+              options={{title: 'Change Profile'}}
+              component={ChangeProfileScreen}
             />
           </Navigator>
         </PaperProvider>
