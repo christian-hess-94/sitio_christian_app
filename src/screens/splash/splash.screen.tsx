@@ -1,4 +1,4 @@
-import {Alert, useColorScheme} from 'react-native';
+// import {Alert, useColorScheme} from 'react-native';
 import {AsyncTask, execTask} from '../../utils/asyncTask.util';
 import ProgressBackground, {
   AppLogo,
@@ -20,9 +20,9 @@ export interface SplashScreenProps {}
 const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
   navigation: {reset},
 }) => {
-  const {user, setUser} = useContext(UserContext);
-  const {colorScheme, ready, authInfo} = user;
-  const phoneColorScheme = useColorScheme();
+  const {user} = useContext(UserContext);
+  const {ready, authInfo} = user;
+  // const phoneColorScheme = useColorScheme();
   const [progress, setProgress] = useState(0);
   const [taskIndex, setTaskIndex] = useState(0);
   const tasks: AsyncTask[] = [
@@ -44,31 +44,32 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
         setProgress(progress + 100 / tasks.length);
       },
     },
-    {
-      name: 'Verify appTheme and currentTheme',
-      task: () => {
-        if (phoneColorScheme !== colorScheme) {
-          Alert.alert(
-            'Temas diferentes',
-            `Deseja configurar o app com o mesmo tema do seu celular (${phoneColorScheme})?`,
-            [
-              {text: `Manter tema ${colorScheme}`, style: 'cancel'},
-              {
-                text: `Usar tema ${phoneColorScheme}`,
-                style: 'default',
-                onPress: () =>
-                  setUser({...user, colorScheme: phoneColorScheme}),
-              },
-            ],
-          );
-          return;
-        }
-      },
-      onComplete: () => {
-        setTaskIndex(taskIndex + 1);
-        setProgress(progress + 100 / tasks.length);
-      },
-    },
+    //TODO: Adicionar task se existe profileInfo
+    // {
+    //   name: 'Verify appTheme and currentTheme',
+    //   task: () => {
+    //     if (phoneColorScheme !== colorScheme) {
+    //       Alert.alert(
+    //         'Temas diferentes',
+    //         `Deseja configurar o app com o mesmo tema do seu celular (${phoneColorScheme})?`,
+    //         [
+    //           {text: `Manter tema ${colorScheme}`, style: 'cancel'},
+    //           {
+    //             text: `Usar tema ${phoneColorScheme}`,
+    //             style: 'default',
+    //             onPress: () =>
+    //               setUser({...user, colorScheme: phoneColorScheme}),
+    //           },
+    //         ],
+    //       );
+    //       return;
+    //     }
+    //   },
+    //   onComplete: () => {
+    //     setTaskIndex(taskIndex + 1);
+    //     setProgress(progress + 100 / tasks.length);
+    //   },
+    // },
     {
       name: 'Wait for firebase response',
       task: () => {
