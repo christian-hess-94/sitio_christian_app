@@ -44,7 +44,6 @@ const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
       } catch (createError) {
         try {
           await auth().signInWithEmailAndPassword(email, password);
-          setFieldValue('submitting', LoadingState.LOADED);
           reset({index: 0, routes: [{name: 'Panel'}]});
         } catch (loginError) {
           setFieldValue('submittingError', createError.code);
