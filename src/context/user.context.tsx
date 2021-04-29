@@ -8,7 +8,7 @@ import {FirestoreUser} from '../schemas/firestore/users.firestore';
 export interface User {
   ready: boolean;
   authInfo: FirebaseAuthTypes.User | null;
-  profileInfo: FirestoreUser | null;
+  profileInfo: FirestoreUser | null | undefined;
   colorScheme: ColorSchemeName;
 }
 //Logica para alterar e recuperar os dados do usuario em outras telas

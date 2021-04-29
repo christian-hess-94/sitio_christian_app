@@ -2,7 +2,7 @@ import {ColorSchemeName} from 'react-native';
 import {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
-const userCollection = firestore().collection('Users');
+const usersCollection = firestore().collection('Users');
 
 export const addUser = async (
   authInfo: FirebaseAuthTypes.User,
@@ -18,9 +18,19 @@ export const addUser = async (
       colorScheme: colorScheme || 'light',
       isActive: false,
     };
-    await userCollection.doc(uid).set(firestoreUserToAdd);
+    await usersCollection.doc(uid).set(firestoreUserToAdd);
   } catch (error) {
     console.log(error);
+  }
+};
+
+export const getUser = async (uid: string): Promise<FirestoreUser | null> => {
+  try {
+    const userReturned = await usersCollection.doc(uid).get();
+    return userReturned.data() as FirestoreUser;
+  } catch (error) {
+    console.log(error);
+    return null;
   }
 };
 

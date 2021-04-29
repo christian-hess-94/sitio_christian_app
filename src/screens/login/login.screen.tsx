@@ -7,12 +7,12 @@ import {
   LoginScreenPage,
 } from './login.styles';
 import LoadComponent, {LoadingState} from '../../components/loadComponent';
+import {addUser, getUser} from '../../schemas/firestore/users.firestore';
 
 import {LoginValidationSchema} from '../../schemas/login.schema';
 import React from 'react';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {StackScreenNames} from '..';
-import {addUser} from '../../schemas/firestore/users.firestore';
 import auth from '@react-native-firebase/auth';
 import {useFormik} from 'formik';
 
@@ -47,8 +47,17 @@ const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
         reset({index: 0, routes: [{name: 'ChangeProfile'}]});
       } catch (createError) {
         try {
-          await auth().signInWithEmailAndPassword(email, password);
-          reset({index: 0, routes: [{name: 'Panel'}]});
+          const {user} = await auth().signInWithEmailAndPassword(
+            email,
+            password,
+          );
+          const profileInfo = await getUser(user.uid);
+          if (profileInfo === undefined) {
+            await addUser(user);
+            reset({index: 0, routes: [{name: 'ChangeProfile'}]});
+          } else {
+            reset({index: 0, routes: [{name: 'Panel'}]});
+          }
         } catch (loginError) {
           setFieldValue('submittingError', createError.code);
           setFieldValue('submitting', LoadingState.ERROR);

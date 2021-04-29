@@ -1,5 +1,6 @@
 // import {Alert, useColorScheme} from 'react-native';
 import {AsyncTask, execTask} from '../../utils/asyncTask.util';
+import {FirestoreUser, getUser} from '../../schemas/firestore/users.firestore';
 import ProgressBackground, {
   AppLogo,
   SplashScreenContainer,
@@ -20,8 +21,8 @@ export interface SplashScreenProps {}
 const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
   navigation: {reset},
 }) => {
-  const {user} = useContext(UserContext);
-  const {ready, authInfo} = user;
+  const {user, setUser} = useContext(UserContext);
+  const {ready, authInfo, profileInfo} = user;
   // const phoneColorScheme = useColorScheme();
   const [progress, setProgress] = useState(0);
   const [taskIndex, setTaskIndex] = useState(0);
@@ -45,6 +46,20 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
       },
     },
     //TODO: Adicionar task se existe profileInfo
+    {
+      name: 'Get UserProfile if it exists',
+      task: async () => {
+        const profileInfo: FirestoreUser | null =
+          authInfo && (await getUser(authInfo?.uid));
+        setUser({...user, profileInfo});
+      },
+      isAsync: true,
+      onComplete: () => {
+        setTaskIndex(taskIndex + 1);
+        setProgress(progress + 100 / tasks.length);
+      },
+    },
+
     // {
     //   name: 'Verify appTheme and currentTheme',
     //   task: () => {
@@ -95,7 +110,16 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
     if (taskIndex >= tasks.length) {
       if (authInfo) {
         console.log('Usuário já autenticado no Firebase, indo para Painel');
-        reset({index: 0, routes: [{name: 'Panel'}]});
+        if (profileInfo === undefined) {
+          console.log('Usuário sem perfil no FireStore, indo para Login');
+          reset({index: 0, routes: [{name: 'Login'}]});
+        } else if (!profileInfo?.isActive) {
+          console.log('Usuário n-active no firestore, indo para ChangeProfile');
+          reset({index: 0, routes: [{name: 'ChangeProfile'}]});
+        } else {
+          console.log('Usuário OK, indo para Panel');
+          reset({index: 0, routes: [{name: 'Panel'}]});
+        }
       } else {
         console.log('Usuário não autenticado no Firebase, indo para Login');
         reset({index: 0, routes: [{name: 'Login'}]});
