@@ -26,15 +26,16 @@ export type StackScreenNames = {
 const Screens: React.FC<ScreenProps> = () => {
   const {Navigator, Screen} = createStackNavigator<StackScreenNames>();
   const {
-    user: {theme},
+    user: {colorScheme},
   } = useContext(UserContext);
-  const colorScheme = useColorScheme();
+  const phoneColorScheme = useColorScheme();
   return (
     <NavigationContainer
-      theme={AvailableThemes[theme || colorScheme || 'light']}>
+      theme={AvailableThemes[colorScheme || phoneColorScheme || 'light']}>
       <StyledThemeProvider
-        theme={AvailableThemes[theme || colorScheme || 'light']}>
-        <PaperProvider theme={AvailableThemes[theme || colorScheme || 'light']}>
+        theme={AvailableThemes[colorScheme || phoneColorScheme || 'light']}>
+        <PaperProvider
+          theme={AvailableThemes[colorScheme || phoneColorScheme || 'light']}>
           <Navigator initialRouteName="Splash" mode="modal">
             <Screen
               name="Splash"

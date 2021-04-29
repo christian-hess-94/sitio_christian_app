@@ -21,8 +21,8 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
   navigation: {reset},
 }) => {
   const {user, setUser} = useContext(UserContext);
-  const {theme, ready, info} = user;
-  const colorScheme = useColorScheme();
+  const {colorScheme, ready, authInfo} = user;
+  const phoneColorScheme = useColorScheme();
   const [progress, setProgress] = useState(0);
   const [taskIndex, setTaskIndex] = useState(0);
   const tasks: AsyncTask[] = [
@@ -47,16 +47,17 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
     {
       name: 'Verify appTheme and currentTheme',
       task: () => {
-        if (colorScheme !== theme) {
+        if (phoneColorScheme !== colorScheme) {
           Alert.alert(
             'Temas diferentes',
-            `Deseja configurar o app com o mesmo tema do seu celular (${colorScheme})?`,
+            `Deseja configurar o app com o mesmo tema do seu celular (${phoneColorScheme})?`,
             [
-              {text: `Manter tema ${theme}`, style: 'cancel'},
+              {text: `Manter tema ${colorScheme}`, style: 'cancel'},
               {
-                text: `Usar tema ${colorScheme}`,
+                text: `Usar tema ${phoneColorScheme}`,
                 style: 'default',
-                onPress: () => setUser({...user, theme: colorScheme}),
+                onPress: () =>
+                  setUser({...user, colorScheme: phoneColorScheme}),
               },
             ],
           );
@@ -91,7 +92,7 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
 
   const initApp = () => {
     if (taskIndex >= tasks.length) {
-      if (info) {
+      if (authInfo) {
         console.log('Usuário já autenticado no Firebase, indo para Painel');
         reset({index: 0, routes: [{name: 'Panel'}]});
       } else {
