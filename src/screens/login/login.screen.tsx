@@ -7,12 +7,14 @@ import {
   LoginScreenPage,
 } from './login.styles';
 import LoadComponent, {LoadingState} from '../../components/loadComponent';
+import React, {useContext} from 'react';
 
 import {LoginValidationSchema} from '../../schemas/login.schema';
-import React from 'react';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {StackScreenNames} from '..';
+import {UserContext} from '../../context/user.context';
 import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 import {useFormik} from 'formik';
 
 export interface LoginScreenProps {}
@@ -21,6 +23,9 @@ const {Title, Content} = Card;
 const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
   navigation: {reset},
 }) => {
+  const {
+    user: {theme},
+  } = useContext(UserContext);
   const {
     values: {email, password, submitting, submittingError},
     handleChange,
@@ -38,8 +43,15 @@ const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
     onSubmit: async ({email, password}, {setFieldValue}) => {
       setFieldValue('submitting', LoadingState.LOADING);
       try {
-        await auth().createUserWithEmailAndPassword(email, password);
-        setFieldValue('submitting', LoadingState.LOADED);
+        const {user} = await auth().createUserWithEmailAndPassword(
+          email,
+          password,
+        );
+        const {uid, displayName} = user;
+        await firestore()
+          .collection('Users')
+          .doc(uid)
+          .set({uid, displayName, email: user.email, theme});
         reset({index: 0, routes: [{name: 'ChangeProfile'}]});
       } catch (createError) {
         try {

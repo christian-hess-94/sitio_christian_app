@@ -1134,10 +1134,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/analytics/-/analytics-11.2.0.tgz#f94dd039539a41507e222d5deb4777934c0b0305"
   integrity sha512-/vCywT0i+E2xPLq5LADcYF07f1yn52zRBIbiR3W54837Izx/7ns3Sg6AXIz1CEUf1nrUmZqTLK6QAGrZZDwPLg==
 
-"@react-native-firebase/app@^11.2.0":
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-11.2.0.tgz#5716bb264cf0a500fb40181bd338eb3067d36c94"
-  integrity sha512-TLrttjy6h5rhmRqnKFe67GNbYeB1VZphH5Gm+pYJzfIbMsh/m6q2Au1D4jmLnfjpqXAaTtAhetnODyT1TH/LzQ==
+"@react-native-firebase/app@^11.3.3":
+  version "11.4.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-11.4.1.tgz#42d5b8ff0b8e17398e2d1b65ca698b9990a76bcf"
+  integrity sha512-RzG3kGzKwO/Ets3S4XxAoki4GhzaHRVrnUDyr7U1zOL46xqOMGD7MKTmpYBa9qzh5GOz3aQwlRvu1yRhPHNGKA==
   dependencies:
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
@@ -1146,6 +1146,11 @@
   version "11.3.3"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-11.3.3.tgz#ed106e86b2237015c2bd6f0eb20de2e88aa0df33"
   integrity sha512-7tKYMdipsOLCQg0GgJhhOUHr76Bllk1mx9m1Pc2IgZj2QEkRNC60AzL9X56StQXAsHuTyNP6sVnOa8vAnO5Egw==
+
+"@react-native-firebase/firestore@^11.4.1":
+  version "11.4.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-11.4.1.tgz#7ed87577cc9eef0f24a8367003186711ce6ec058"
+  integrity sha512-bptsAFRR5RbnsHnpRbJP8JVS1YugPtHOPS83ufESIInJvd7lVrWo3w6NJZmVbjIs696WVtN534J2zRRenACqxw==
 
 "@react-native-firebase/remote-config@^11.2.0":
   version "11.2.0"
