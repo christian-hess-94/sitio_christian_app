@@ -35,7 +35,7 @@ const Screens: React.FC<ScreenProps> = () => {
       <StyledThemeProvider
         theme={AvailableThemes[theme || colorScheme || 'light']}>
         <PaperProvider theme={AvailableThemes[theme || colorScheme || 'light']}>
-          <Navigator initialRouteName="Splash">
+          <Navigator initialRouteName="Splash" mode="modal">
             <Screen
               name="Splash"
               component={SplashScreen}
