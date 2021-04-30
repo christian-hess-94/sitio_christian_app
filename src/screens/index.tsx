@@ -1,3 +1,6 @@
+import ChangeProfileScreen, {
+  ChangeProfileScreenProps,
+} from './changeProfile/changeProfile.screen';
 import LoginScreen, {LoginScreenProps} from './login/login.screen';
 import PanelScreen, {PanelScreenProps} from './panel/panel.screen';
 import React, {useContext} from 'react';
@@ -17,21 +20,23 @@ export type StackScreenNames = {
   Splash: SplashScreenProps;
   Login: LoginScreenProps;
   Panel: PanelScreenProps;
+  ChangeProfile: ChangeProfileScreenProps;
 };
 
 const Screens: React.FC<ScreenProps> = () => {
   const {Navigator, Screen} = createStackNavigator<StackScreenNames>();
   const {
-    user: {theme},
+    user: {colorScheme},
   } = useContext(UserContext);
-  const colorScheme = useColorScheme();
+  const phoneColorScheme = useColorScheme();
   return (
     <NavigationContainer
-      theme={AvailableThemes[theme || colorScheme || 'light']}>
+      theme={AvailableThemes[colorScheme || phoneColorScheme || 'light']}>
       <StyledThemeProvider
-        theme={AvailableThemes[theme || colorScheme || 'light']}>
-        <PaperProvider theme={AvailableThemes[theme || colorScheme || 'light']}>
-          <Navigator initialRouteName="Splash">
+        theme={AvailableThemes[colorScheme || phoneColorScheme || 'light']}>
+        <PaperProvider
+          theme={AvailableThemes[colorScheme || phoneColorScheme || 'light']}>
+          <Navigator initialRouteName="Splash" mode="modal">
             <Screen
               name="Splash"
               component={SplashScreen}
@@ -46,6 +51,11 @@ const Screens: React.FC<ScreenProps> = () => {
               name="Panel"
               options={{title: 'Painel'}}
               component={PanelScreen}
+            />
+            <Screen
+              name="ChangeProfile"
+              options={{title: 'Change Profile'}}
+              component={ChangeProfileScreen}
             />
           </Navigator>
         </PaperProvider>
