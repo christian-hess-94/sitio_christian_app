@@ -49,9 +49,9 @@ const SplashScreen: React.FC<SSP<StackScreenNames, 'Splash'>> = ({
     {
       name: 'Get UserProfile if it exists',
       task: async () => {
-        const profileInfo: FirestoreUser | null =
+        const profileInfoFromFB: FirestoreUser | null =
           authInfo && (await getUser(authInfo?.uid));
-        setUser({...user, profileInfo});
+        setUser({...user, profileInfo: profileInfoFromFB});
       },
       isAsync: true,
       onComplete: () => {

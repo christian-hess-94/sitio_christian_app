@@ -7,12 +7,13 @@ import {
   LoginScreenPage,
 } from './login.styles';
 import LoadComponent, {LoadingState} from '../../components/loadComponent';
+import React, {useContext} from 'react';
 import {addUser, getUser} from '../../schemas/firestore/users.firestore';
 
 import {LoginValidationSchema} from '../../schemas/login.schema';
-import React from 'react';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {StackScreenNames} from '..';
+import {UserContext} from '../../context/user.context';
 import auth from '@react-native-firebase/auth';
 import {useFormik} from 'formik';
 
@@ -22,6 +23,7 @@ const {Title, Content} = Card;
 const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
   navigation: {reset},
 }) => {
+  const {user, setUser} = useContext(UserContext);
   const {
     values: {email, password, submitting, submittingError},
     handleChange,
@@ -31,8 +33,8 @@ const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
     submitCount,
   } = useFormik({
     initialValues: {
-      email: 'christianhess94@gmail.com',
-      password: 'chr15091994',
+      email: '',
+      password: '',
       submitting: LoadingState.LOADED,
       submittingError: '',
     },
@@ -47,15 +49,17 @@ const LoginScreen: React.FC<SSP<StackScreenNames, 'Login'>> = ({
         reset({index: 0, routes: [{name: 'ChangeProfile'}]});
       } catch (createError) {
         try {
-          const {user} = await auth().signInWithEmailAndPassword(
+          const {user: loggedUser} = await auth().signInWithEmailAndPassword(
             email,
             password,
           );
-          const profileInfo = await getUser(user.uid);
+          const profileInfo = await getUser(loggedUser.uid);
           if (profileInfo === undefined) {
-            await addUser(user);
+            await addUser(loggedUser);
             reset({index: 0, routes: [{name: 'ChangeProfile'}]});
           } else {
+            const profileInfo = await getUser(loggedUser.uid);
+            setUser({...user, authInfo: loggedUser, profileInfo});
             reset({index: 0, routes: [{name: 'Panel'}]});
           }
         } catch (loginError) {

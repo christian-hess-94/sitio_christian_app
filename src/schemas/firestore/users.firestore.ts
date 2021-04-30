@@ -34,7 +34,17 @@ export const getUser = async (uid: string): Promise<FirestoreUser | null> => {
   }
 };
 
-export type FirestoreUser = Partial<FirebaseAuthTypes.User> & {
+export const updateUser = async (uid: string, newUser: FirestoreUser) => {
+  try {
+    await usersCollection.doc(uid).update(newUser);
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
+
+export type FirestoreUser = FirebaseAuthTypes.User & {
   colorScheme: ColorSchemeName;
   isActive: boolean;
 };
