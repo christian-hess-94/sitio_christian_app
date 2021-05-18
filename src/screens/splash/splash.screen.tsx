@@ -1,11 +1,14 @@
 // import {Alert, useColorScheme} from 'react-native';
+
 import {AsyncTask, execTask} from '../../utils/asyncTask.util';
-import {FirestoreUser, getUser} from '../../schemas/firestore/users.firestore';
+import {
+  FirestoreUser,
+  getUser,
+} from '../../schemas/firestore/user/user.firestore';
 import ProgressBackground, {
   AppLogo,
   SplashScreenContainer,
 } from './splash.styles';
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useContext, useEffect, useState} from 'react';
 import {
   fetchAndActivateConfig,
@@ -15,6 +18,8 @@ import {
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {StackScreenNames} from '..';
 import {UserContext} from '../../context/user.context';
+
+/* eslint-disable react-hooks/exhaustive-deps */
 
 export interface SplashScreenProps {}
 
