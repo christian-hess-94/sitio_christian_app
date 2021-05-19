@@ -1,8 +1,11 @@
 import {FAB, Modal, useTheme} from 'react-native-paper';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 
 import AddCategory from '../../forms/addCategory.form';
 import AddCompra from '../../forms/addCompra.form';
+import {CategoryContext} from '../../context/categories.context';
+import CategoryDivider from '../../components/categoryDivider';
+import {FlatList} from 'react-native';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {StackScreenNames} from '..';
 
@@ -13,8 +16,14 @@ const ComprasScreen: React.FC<SSP<StackScreenNames, 'Compras'>> = () => {
   const [visibleAddCompra, setVisibleAddCompra] = useState(false);
   const [visibleAddCAtegory, setVisibleAddCAtegory] = useState(false);
   const [openFabGroup, setOpenFabGroup] = useState(false);
+  const {categories} = useContext(CategoryContext);
   return (
     <>
+      <FlatList
+        data={categories}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => <CategoryDivider category={item} />}
+      />
       <FAB.Group
         visible
         open={openFabGroup}
