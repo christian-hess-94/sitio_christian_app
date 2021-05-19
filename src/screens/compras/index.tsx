@@ -6,6 +6,7 @@ import AddCompra from '../../forms/addCompra.form';
 import {CategoryContext} from '../../context/categories.context';
 import CategoryDivider from '../../components/categoryDivider';
 import EditCompra from '../../forms/editCompra.form';
+import {FirebaseFirestoreTypes} from '@react-native-firebase/firestore';
 import {FlatList} from 'react-native';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {StackScreenNames} from '..';
@@ -16,11 +17,14 @@ const ComprasScreen: React.FC<SSP<StackScreenNames, 'Compras'>> = () => {
   const theme = useTheme();
   const [visibleAddCompra, setVisibleAddCompra] = useState(false);
   const [visibleEditCompra, setVisibleEditCompra] = useState(false);
-  const [compraToEdit, setCompraToEdit] = useState();
+  const [
+    compraToEdit,
+    setCompraToEdit,
+  ] = useState<FirebaseFirestoreTypes.DocumentData>();
   const [visibleAddCAtegory, setVisibleAddCAtegory] = useState(false);
   const [openFabGroup, setOpenFabGroup] = useState(false);
   const {categories} = useContext(CategoryContext);
-  const openEditCompraModal = compra => {
+  const openEditCompraModal = (compra: FirebaseFirestoreTypes.DocumentData) => {
     setVisibleEditCompra(true);
     setCompraToEdit(compra);
   };
@@ -59,7 +63,9 @@ const ComprasScreen: React.FC<SSP<StackScreenNames, 'Compras'>> = () => {
       </Modal>
       <Modal
         visible={visibleEditCompra}
-        onDismiss={() => setVisibleEditCompra(false)}
+        onDismiss={() => {
+          setVisibleEditCompra(false);
+        }}
         dismissable>
         <EditCompra
           compraToEdit={compraToEdit}
