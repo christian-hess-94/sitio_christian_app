@@ -35,10 +35,11 @@ const CategoryDivider: React.FC<CategoryDividerProps> = ({
           <CustomCard
             key={compra.id}
             title={compra.name}
+            titleColor={compra.quantity === '0' ? 'accent' : undefined}
             content={
               <>
                 <Text>
-                  {compra.quantity} / {compra.quantityGoal || 1}
+                  {compra.quantity} / {compra.quantityGoal}
                 </Text>
               </>
             }

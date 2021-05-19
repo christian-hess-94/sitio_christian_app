@@ -1,5 +1,9 @@
 import {Button, Card} from 'react-native-paper';
-import {CustomCardActions, CustomCardContainer} from './styles';
+import {
+  CustomCardActions,
+  CustomCardContainer,
+  CustomCardTitle,
+} from './styles';
 
 import {FlatList} from 'react-native';
 import {IconSource} from 'react-native-paper/lib/typescript/components/Icon';
@@ -8,6 +12,7 @@ import {useTheme} from 'styled-components';
 
 interface CustomcardProps {
   title: string;
+  titleColor?: 'primary' | 'error' | 'accent';
   content: React.ReactElement;
   actions?: Array<{
     text?: string;
@@ -18,17 +23,22 @@ interface CustomcardProps {
   }>;
 }
 
-const CustomCard: React.FC<CustomcardProps> = ({title, content, actions}) => {
+const CustomCard: React.FC<CustomcardProps> = ({
+  title,
+  content,
+  actions,
+  titleColor,
+}) => {
   const theme = useTheme();
   return (
     <CustomCardContainer>
-      <Card.Title title={title} />
+      <CustomCardTitle titleColor={titleColor} title={title} />
       <Card.Content>{content}</Card.Content>
       <CustomCardActions>
         <FlatList
           data={actions}
           keyExtractor={(action, index) => index.toString()}
-          style={{flexDirection: 'row-reverse', flex: 1}}
+          style={{flexDirection: 'row', flex: 1}}
           renderItem={({item: {text, color, onPress, mode, icon}}) => (
             <Button
               mode={mode || 'text'}
