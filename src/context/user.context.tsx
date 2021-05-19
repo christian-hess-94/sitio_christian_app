@@ -8,7 +8,7 @@ import {FirestoreUser} from '../schemas/firestore/user/user.firestore';
 export interface User {
   ready: boolean;
   authInfo: FirebaseAuthTypes.User | null;
-  profileInfo: FirestoreUser | null | undefined;
+  profileInfo: FirestoreUser;
   colorScheme: ColorSchemeName;
 }
 //Logica para alterar e recuperar os dados do usuario em outras telas
@@ -21,7 +21,14 @@ const defaultUser: User = {
   ready: false,
   colorScheme: 'light',
   authInfo: null,
-  profileInfo: null,
+  profileInfo: {
+    colorScheme: 'dark',
+    displayName: '',
+    email: '',
+    isActive: true,
+    phoneNumber: '',
+    uid: '',
+  },
 };
 //Contexto a ser usado pelos Hooks para recuperar os dados do usuario
 export const UserContext = React.createContext<UserLogic>({

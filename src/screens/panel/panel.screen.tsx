@@ -1,6 +1,6 @@
 import {Button, useTheme} from 'react-native-paper';
 
-import Customcard from '../../components/customCard';
+import CustomCard from '../../components/customCard';
 import React from 'react';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {ScreenStyledContainer} from '../../components/ScreenContainer/styles';
@@ -15,25 +15,9 @@ const PanelScreen: React.FC<SSP<StackScreenNames, 'Panel'>> = ({
   const theme = useTheme();
   return (
     <ScreenStyledContainer>
-      <Customcard
+      <CustomCard
         title="Compras"
-        content={
-          <>
-            <Button
-              onPress={() => {
-                auth().signOut();
-                reset({index: 0, routes: [{name: 'Login'}]});
-              }}>
-              Logout
-            </Button>
-            <Button
-              onPress={() => {
-                navigate('ChangeProfile', {});
-              }}>
-              Change Profile
-            </Button>
-          </>
-        }
+        content={<></>}
         actions={[
           {
             text: 'Ver tudo',
@@ -43,6 +27,19 @@ const PanelScreen: React.FC<SSP<StackScreenNames, 'Panel'>> = ({
           },
         ]}
       />
+      <Button
+        onPress={() => {
+          auth().signOut();
+          reset({index: 0, routes: [{name: 'Login'}]});
+        }}>
+        Logout
+      </Button>
+      <Button
+        onPress={() => {
+          navigate('ChangeProfile', {});
+        }}>
+        Change Profile
+      </Button>
     </ScreenStyledContainer>
   );
 };

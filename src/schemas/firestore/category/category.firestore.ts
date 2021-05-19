@@ -1,6 +1,6 @@
 import firestore from '@react-native-firebase/firestore';
 
-const categoriesCollection = firestore().collection('Categories');
+export const categoriesCollection = firestore().collection('Categories');
 
 export const addCategory = async (categoryInfo: FirestoreCategory) => {
   try {
@@ -36,6 +36,6 @@ export const updateCategory = async (
 };
 
 export type FirestoreCategory = {
-  uid?: string | undefined;
+  uid?: string | null;
   name: string | null;
 };

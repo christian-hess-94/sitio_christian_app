@@ -1,9 +1,7 @@
 import React, {createContext, useEffect, useState} from 'react';
-import firestore, {
-  FirebaseFirestoreTypes,
-} from '@react-native-firebase/firestore';
 
-const categoriesCollection = firestore().collection('Categories');
+import {FirebaseFirestoreTypes} from '@react-native-firebase/firestore';
+import {categoriesCollection} from '../schemas/firestore/category/category.firestore';
 
 interface CategoryLogic {
   categories: FirebaseFirestoreTypes.DocumentData[];
@@ -35,7 +33,6 @@ const CategoryContextProvider: React.FC = ({children}) => {
     categoriesCollection.onSnapshot(
       querySnapshot => {
         let data: FirebaseFirestoreTypes.DocumentData[] = [];
-
         querySnapshot.forEach(doc => data.push({id: doc.id, ...doc.data()}));
         setCategories(data);
       },

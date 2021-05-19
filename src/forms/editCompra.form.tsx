@@ -4,14 +4,18 @@ import React, {useContext, useState} from 'react';
 import {CategoryContext} from '../context/categories.context';
 import {CreateCompraSchema} from '../schemas/firestore/compra/compra.schema';
 import CustomCard from '../components/customCard';
-import {addCompra} from '../schemas/firestore/compra/compra.firestore';
+import {updateCompra} from '../schemas/firestore/compra/compra.firestore';
 import {useFormik} from 'formik';
 
-interface AddCompraFormProps {
+interface EditCompraFormProps {
+  compraToEdit: any;
   onDismissModal: () => void;
 }
 
-const AddCompra: React.FC<AddCompraFormProps> = ({onDismissModal}) => {
+const EditCompra: React.FC<EditCompraFormProps> = ({
+  onDismissModal,
+  compraToEdit,
+}) => {
   const [visibleMenu, setVisibleMenu] = useState(false);
   const theme = useTheme();
   const {categories} = useContext(CategoryContext);
@@ -24,13 +28,20 @@ const AddCompra: React.FC<AddCompraFormProps> = ({onDismissModal}) => {
     resetForm,
   } = useFormik({
     initialValues: {
-      name: '',
-      quantity: '',
-      quantityGoal: '',
-      category: {name: '', quantity: '', id: ''},
+      name: compraToEdit.name,
+      quantity: compraToEdit.quantity,
+      quantityGoal: compraToEdit.quantityGoal,
+      category: categories.filter(
+        categ => categ.id === compraToEdit.categoryId,
+      )[0],
     },
     onSubmit: async () => {
-      await addCompra({name, categoryId: category?.id, quantity, quantityGoal});
+      await updateCompra(compraToEdit.id, {
+        name,
+        categoryId: category?.id,
+        quantity,
+        quantityGoal,
+      });
       resetForm();
       onDismissModal();
     },
@@ -38,7 +49,7 @@ const AddCompra: React.FC<AddCompraFormProps> = ({onDismissModal}) => {
   });
   return (
     <CustomCard
-      title="Adicionar Compra"
+      title="Editar Compra"
       content={
         <>
           <TextInput
@@ -76,8 +87,8 @@ const AddCompra: React.FC<AddCompraFormProps> = ({onDismissModal}) => {
                 }
                 onPress={() => setVisibleMenu(true)}
                 uppercase={false}>
-                {category?.name
-                  ? `Categoria: ${category?.name}`
+                {category.name
+                  ? `Categoria: ${category.name}`
                   : 'Toque para escolher a categoria'}
               </Button>
             }>
@@ -104,7 +115,7 @@ const AddCompra: React.FC<AddCompraFormProps> = ({onDismissModal}) => {
       }
       actions={[
         {
-          text: 'Adicionar compra',
+          text: 'Editar compra',
           onPress: handleSubmit,
           color: theme.colors.primary,
         },
@@ -113,4 +124,4 @@ const AddCompra: React.FC<AddCompraFormProps> = ({onDismissModal}) => {
   );
 };
 
-export default AddCompra;
+export default EditCompra;
