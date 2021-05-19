@@ -1,12 +1,33 @@
 import 'styled-components';
 interface AppThemeColors {
-  terciary: string;
-  status: {
+  primary: string;
+  accent: string;
+  border: string;
+  card: string;
+  terciary: {
     success: string;
     info: string;
     warning: string;
   };
+  disabled: string;
+  backdrop: string;
+  background: string;
+  surface: string;
+  error: string;
+  notification: string;
+  onBackground: string;
+  onSurface: string;
+  placeholder: string;
+  text: string;
   invertedText: string;
+
+  // terciary: string;
+  // status: {
+  //   success: string;
+  //   info: string;
+  //   warning: string;
+  // };
+  // invertedText: string;
 }
 interface AppFont {
   fontFamily?: string;

@@ -1,4 +1,5 @@
 /* eslint-disable no-shadow */
+
 import {Card, Text, TextInput} from 'react-native-paper';
 import {
   ForgotPasswordButton,
@@ -8,7 +9,7 @@ import {
 } from './login.styles';
 import LoadComponent, {LoadingState} from '../../components/loadComponent';
 import React, {useContext} from 'react';
-import {addUser, getUser} from '../../schemas/firestore/users.firestore';
+import {addUser, getUser} from '../../schemas/firestore/user/user.firestore';
 
 import {LoginValidationSchema} from '../../schemas/login.schema';
 import {StackScreenProps as SSP} from '@react-navigation/stack';

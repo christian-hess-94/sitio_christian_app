@@ -5,7 +5,7 @@ import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {ScreenStyledContainer} from '../../components/ScreenContainer/styles';
 import {StackScreenNames} from '..';
 import {UserContext} from '../../context/user.context';
-import {updateUser} from '../../schemas/firestore/users.firestore';
+import {updateUser} from '../../schemas/firestore/user/user.firestore';
 
 export interface ChangeProfileScreenProps {}
 

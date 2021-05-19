@@ -15,8 +15,8 @@ export const addUser = async (
       email,
       displayName,
       phoneNumber,
-      colorScheme: colorScheme || 'light',
       isActive: false,
+      colorScheme: colorScheme || 'light',
     };
     await usersCollection.doc(uid).set(firestoreUserToAdd);
   } catch (error) {
@@ -44,7 +44,11 @@ export const updateUser = async (uid: string, newUser: FirestoreUser) => {
   }
 };
 
-export type FirestoreUser = FirebaseAuthTypes.User & {
-  colorScheme: ColorSchemeName;
-  isActive: boolean;
+export type FirestoreUser = {
+  uid: string | null;
+  colorScheme: ColorSchemeName | null;
+  isActive: boolean | null;
+  email: string | null;
+  displayName: string | null;
+  phoneNumber: string | null;
 };
