@@ -17,23 +17,7 @@ const PanelScreen: React.FC<SSP<StackScreenNames, 'Panel'>> = ({
     <ScreenStyledContainer>
       <CustomCard
         title="Compras"
-        content={
-          <>
-            <Button
-              onPress={() => {
-                auth().signOut();
-                reset({index: 0, routes: [{name: 'Login'}]});
-              }}>
-              Logout
-            </Button>
-            <Button
-              onPress={() => {
-                navigate('ChangeProfile', {});
-              }}>
-              Change Profile
-            </Button>
-          </>
-        }
+        content={<></>}
         actions={[
           {
             text: 'Ver tudo',
@@ -43,6 +27,19 @@ const PanelScreen: React.FC<SSP<StackScreenNames, 'Panel'>> = ({
           },
         ]}
       />
+      <Button
+        onPress={() => {
+          auth().signOut();
+          reset({index: 0, routes: [{name: 'Login'}]});
+        }}>
+        Logout
+      </Button>
+      <Button
+        onPress={() => {
+          navigate('ChangeProfile', {});
+        }}>
+        Change Profile
+      </Button>
     </ScreenStyledContainer>
   );
 };
