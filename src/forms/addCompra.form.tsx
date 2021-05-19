@@ -24,7 +24,11 @@ const AddCompra: React.FC<AddCompraFormProps> = ({onDismissModal}) => {
     errors,
     resetForm,
   } = useFormik({
-    initialValues: {name: '', quantity: '', category: {}},
+    initialValues: {
+      name: '',
+      quantity: '',
+      category: {name: '', quantity: '', id: ''},
+    },
     onSubmit: async () => {
       await addCompra({name, categoryId: category?.id, quantity});
       resetForm();
