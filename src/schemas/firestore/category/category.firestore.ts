@@ -36,6 +36,6 @@ export const updateCategory = async (
 };
 
 export type FirestoreCategory = {
-  uid?: string | undefined;
+  uid?: string | null;
   name: string | null;
 };
