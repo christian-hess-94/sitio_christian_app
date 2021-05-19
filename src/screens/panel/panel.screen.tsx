@@ -1,6 +1,6 @@
 import {Button, useTheme} from 'react-native-paper';
 
-import Customcard from '../../components/customCard';
+import CustomCard from '../../components/customCard';
 import React from 'react';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {ScreenStyledContainer} from '../../components/ScreenContainer/styles';
@@ -15,7 +15,7 @@ const PanelScreen: React.FC<SSP<StackScreenNames, 'Panel'>> = ({
   const theme = useTheme();
   return (
     <ScreenStyledContainer>
-      <Customcard
+      <CustomCard
         title="Compras"
         content={
           <>

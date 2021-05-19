@@ -5,6 +5,7 @@ import AddCategory from '../../forms/addCategory.form';
 import AddCompra from '../../forms/addCompra.form';
 import {CategoryContext} from '../../context/categories.context';
 import CategoryDivider from '../../components/categoryDivider';
+import EditCompra from '../../forms/editCompra.form';
 import {FlatList} from 'react-native';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {StackScreenNames} from '..';
@@ -14,15 +15,26 @@ export interface ComprasScreenProps {}
 const ComprasScreen: React.FC<SSP<StackScreenNames, 'Compras'>> = () => {
   const theme = useTheme();
   const [visibleAddCompra, setVisibleAddCompra] = useState(false);
+  const [visibleEditCompra, setVisibleEditCompra] = useState(false);
+  const [compraToEdit, setCompraToEdit] = useState();
   const [visibleAddCAtegory, setVisibleAddCAtegory] = useState(false);
   const [openFabGroup, setOpenFabGroup] = useState(false);
   const {categories} = useContext(CategoryContext);
+  const openEditCompraModal = compra => {
+    setVisibleEditCompra(true);
+    setCompraToEdit(compra);
+  };
   return (
     <>
       <FlatList
         data={categories}
         keyExtractor={item => item.id}
-        renderItem={({item}) => <CategoryDivider category={item} />}
+        renderItem={({item}) => (
+          <CategoryDivider
+            category={item}
+            openEditCompraModal={openEditCompraModal}
+          />
+        )}
       />
       <FAB.Group
         visible
@@ -44,6 +56,15 @@ const ComprasScreen: React.FC<SSP<StackScreenNames, 'Compras'>> = () => {
         onDismiss={() => setVisibleAddCompra(false)}
         dismissable>
         <AddCompra onDismissModal={() => setVisibleAddCompra(false)} />
+      </Modal>
+      <Modal
+        visible={visibleEditCompra}
+        onDismiss={() => setVisibleEditCompra(false)}
+        dismissable>
+        <EditCompra
+          compraToEdit={compraToEdit}
+          onDismissModal={() => setVisibleEditCompra(false)}
+        />
       </Modal>
       <Modal
         visible={visibleAddCAtegory}
