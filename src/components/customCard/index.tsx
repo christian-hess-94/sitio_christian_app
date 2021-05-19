@@ -1,42 +1,57 @@
 import {Button, Card} from 'react-native-paper';
+import {
+  CustomCardActions,
+  CustomCardContainer,
+  CustomCardTitle,
+} from './styles';
 
 import {FlatList} from 'react-native';
+import {IconSource} from 'react-native-paper/lib/typescript/components/Icon';
 import React from 'react';
 import {useTheme} from 'styled-components';
 
 interface CustomcardProps {
   title: string;
+  titleColor?: 'primary' | 'error' | 'accent';
   content: React.ReactElement;
   actions?: Array<{
-    text: string;
+    text?: string;
     color?: any;
     onPress?: () => void;
     mode?: 'contained' | 'outlined' | 'text';
+    icon?: IconSource;
   }>;
 }
 
-const Customcard: React.FC<CustomcardProps> = ({title, content, actions}) => {
+const CustomCard: React.FC<CustomcardProps> = ({
+  title,
+  content,
+  actions,
+  titleColor,
+}) => {
   const theme = useTheme();
   return (
-    <Card>
-      <Card.Title title={title} />
+    <CustomCardContainer>
+      <CustomCardTitle titleColor={titleColor} title={title} />
       <Card.Content>{content}</Card.Content>
-      <Card.Actions>
+      <CustomCardActions>
         <FlatList
           data={actions}
-          keyExtractor={action => action.text}
-          renderItem={({item: {text, color, onPress, mode}}) => (
+          keyExtractor={(action, index) => index.toString()}
+          style={{flexDirection: 'row', flex: 1}}
+          renderItem={({item: {text, color, onPress, mode, icon}}) => (
             <Button
               mode={mode || 'text'}
               color={color || theme.colors.text}
-              onPress={onPress}>
+              onPress={onPress}
+              icon={icon}>
               {text}
             </Button>
           )}
         />
-      </Card.Actions>
-    </Card>
+      </CustomCardActions>
+    </CustomCardContainer>
   );
 };
 
-export default Customcard;
+export default CustomCard;

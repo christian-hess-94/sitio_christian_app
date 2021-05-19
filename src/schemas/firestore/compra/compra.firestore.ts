@@ -1,6 +1,6 @@
 import firestore from '@react-native-firebase/firestore';
 
-const comprasCollection = firestore().collection('Compras');
+export const comprasCollection = firestore().collection('Compras');
 
 export const addCompra = async (compraInfo: FirestoreCompra) => {
   try {
@@ -35,5 +35,6 @@ export const updateCompra = async (uid: string, newCompra: FirestoreCompra) => {
 export type FirestoreCompra = {
   name: string | null;
   quantity: string;
+  quantityGoal: string;
   categoryId: string | undefined;
 };
