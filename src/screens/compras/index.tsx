@@ -34,13 +34,13 @@ const ComprasScreen: React.FC<SSP<StackScreenNames, 'Compras'>> = () => {
         visible={visibleAddCompra}
         onDismiss={() => setVisibleAddCompra(false)}
         dismissable>
-        <AddCompra />
+        <AddCompra onDismissModal={() => setVisibleAddCompra(false)} />
       </Modal>
       <Modal
         visible={visibleAddCAtegory}
         onDismiss={() => setVisibleAddCAtegory(false)}
         dismissable>
-        <AddCategory />
+        <AddCategory onDismissModal={() => setVisibleAddCAtegory(false)} />
       </Modal>
     </>
   );

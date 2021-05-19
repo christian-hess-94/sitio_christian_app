@@ -8,20 +8,31 @@ import {UserContext} from '../context/user.context';
 import {addCategory} from '../schemas/firestore/category/category.firestore';
 import {useFormik} from 'formik';
 
-interface AddCategoryFormProps {}
+interface AddCategoryFormProps {
+  onDismissModal: () => void;
+}
 
-const AddCategory: React.FC<AddCategoryFormProps> = () => {
+const AddCategory: React.FC<AddCategoryFormProps> = ({onDismissModal}) => {
   const {
     user: {
       profileInfo: {uid},
     },
   } = useContext(UserContext);
-  const {values, handleSubmit, handleChange, submitCount, errors} = useFormik({
+  const {
+    values,
+    handleSubmit,
+    handleChange,
+    submitCount,
+    errors,
+    resetForm,
+  } = useFormik({
     initialValues: {
       name: '',
     },
-    onSubmit: () => {
-      addCategory({name: values.name, uid});
+    onSubmit: async () => {
+      await addCategory({name: values.name, uid});
+      resetForm();
+      onDismissModal();
     },
     validationSchema: CreateCategorySchema,
   });
@@ -39,10 +50,8 @@ const AddCategory: React.FC<AddCategoryFormProps> = () => {
                 label="Nome da categoria"
                 mode="outlined"
               />
-              <Button onPress={handleSubmit}>Adicionar</Button>
-
-              <Text> {JSON.stringify(values)}</Text>
               <Text> {submitCount > 0 && errors.name}</Text>
+              <Button onPress={handleSubmit}>Adicionar</Button>
             </>
           }
         />
