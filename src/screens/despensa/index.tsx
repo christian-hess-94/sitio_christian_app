@@ -3,6 +3,7 @@ import React, {useContext, useState} from 'react';
 
 import AddCategory from '../../forms/addCategory.form';
 import AddCompra from '../../forms/addCompra.form';
+import {BottomSpacer} from '../../components/flex-layout/styles';
 import {CategoryContext} from '../../context/categories.context';
 import CategoryDivider from '../../components/categoryDivider';
 import {ComprasContext} from '../../context/compras.context';
@@ -44,6 +45,7 @@ const DespensaScreen: React.FC<SSP<StackScreenNames, 'Despensa'>> = ({
             openEditCompraModal={openEditCompraModal}
           />
         )}
+        ListFooterComponent={<BottomSpacer />}
       />
       <FAB.Group
         visible

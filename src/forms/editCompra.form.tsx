@@ -162,7 +162,7 @@ const EditCompra: React.FC<EditCompraFormProps> = ({onDismissModal}) => {
         {
           text: 'Editar compra',
           onPress: handleSubmit,
-          color: theme.colors.primary,
+          color: undefined,
         },
       ]}
     />
