@@ -41,31 +41,6 @@ const AddCompra: React.FC<AddCompraFormProps> = ({onDismissModal}) => {
       title="Adicionar Compra"
       content={
         <>
-          <TextInput
-            value={name}
-            onChangeText={handleChange('name')}
-            mode="outlined"
-            placeholder="Nome da compra"
-          />
-          {errors.name && <Text>{errors.name}</Text>}
-          <TextInput
-            value={quantity}
-            mode="outlined"
-            onChangeText={handleChange('quantity')}
-            placeholder="Quantidade atual"
-            keyboardType="numeric"
-            autoCompleteType="off"
-          />
-          {errors.quantity && <Text>{errors.quantity}</Text>}
-          <TextInput
-            value={quantityGoal}
-            mode="outlined"
-            onChangeText={handleChange('quantityGoal')}
-            placeholder="Quantidade máxima"
-            keyboardType="numeric"
-            autoCompleteType="off"
-          />
-          {errors.quantityGoal && <Text>{errors.quantityGoal}</Text>}
           <Menu
             visible={visibleMenu}
             onDismiss={() => setVisibleMenu(false)}
@@ -100,13 +75,38 @@ const AddCompra: React.FC<AddCompraFormProps> = ({onDismissModal}) => {
             ))}
           </Menu>
           {errors.category && <Text>{errors.category.name}</Text>}
+          <TextInput
+            value={name}
+            onChangeText={handleChange('name')}
+            mode="outlined"
+            placeholder="Nome da compra"
+          />
+          {errors.name && <Text>{errors.name}</Text>}
+          <TextInput
+            value={quantity}
+            mode="outlined"
+            onChangeText={handleChange('quantity')}
+            placeholder="Quantidade atual"
+            keyboardType="numeric"
+            autoCompleteType="off"
+          />
+          {errors.quantity && <Text>{errors.quantity}</Text>}
+          <TextInput
+            value={quantityGoal}
+            mode="outlined"
+            onChangeText={handleChange('quantityGoal')}
+            placeholder="Quantidade máxima"
+            keyboardType="numeric"
+            autoCompleteType="off"
+          />
+          {errors.quantityGoal && <Text>{errors.quantityGoal}</Text>}
         </>
       }
       actions={[
         {
           text: 'Adicionar compra',
           onPress: handleSubmit,
-          color: theme.colors.primary,
+          color: 'primary',
         },
       ]}
     />

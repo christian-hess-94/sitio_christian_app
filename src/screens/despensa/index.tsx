@@ -47,21 +47,23 @@ const DespensaScreen: React.FC<SSP<StackScreenNames, 'Despensa'>> = ({
         )}
         ListFooterComponent={<BottomSpacer />}
       />
-      <FAB.Group
-        visible
-        open={openFabGroup}
-        icon={openFabGroup ? 'close' : 'plus'}
-        onPress={() => setOpenFabGroup(true)}
-        actions={[
-          {icon: 'food-apple', onPress: () => setVisibleAddCompra(true)},
-          {
-            icon: 'format-list-bulleted',
-            onPress: () => setVisibleAddCAtegory(true),
-          },
-        ]}
-        onStateChange={({open}) => setOpenFabGroup(open)}
-        color={theme.colors.text}
-      />
+      {!visibleAddCAtegory && !visibleAddCompra && !visibleEditCompra && (
+        <FAB.Group
+          visible
+          open={openFabGroup}
+          icon={openFabGroup ? 'close' : 'plus'}
+          onPress={() => setOpenFabGroup(true)}
+          actions={[
+            {icon: 'food-apple', onPress: () => setVisibleAddCompra(true)},
+            {
+              icon: 'format-list-bulleted',
+              onPress: () => setVisibleAddCAtegory(true),
+            },
+          ]}
+          onStateChange={({open}) => setOpenFabGroup(open)}
+          color={theme.colors.text}
+        />
+      )}
       <Modal
         visible={visibleAddCompra}
         onDismiss={() => setVisibleAddCompra(false)}

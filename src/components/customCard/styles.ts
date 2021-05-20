@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 export const CustomCardContainer = styled(Card)`
   margin-vertical: 4px;
   margin-horizontal: 8px;
+  padding-bottom: 8px;
 `;
 export const CustomCardActions = styled(Card.Actions)`
   flex-direction: row-reverse;
