@@ -18,11 +18,13 @@ const CategoryDivider: React.FC<CategoryDividerProps> = ({
   isShoppingList,
 }) => {
   const {compras} = useContext(ComprasContext);
-  const filteredCompras = compras.filter(compra => {
-    return isShoppingList
-      ? compra.categoryId === category.id && compra.quantity === '0'
-      : compra.categoryId === category.id;
-  });
+  const filteredCompras = compras
+    .filter(compra => {
+      return isShoppingList
+        ? compra.categoryId === category.id && compra.quantity === '0'
+        : compra.categoryId === category.id;
+    })
+    .sort((a, b) => (a.name > b.name ? 1 : -1));
   return (
     <>
       {filteredCompras.length > 0 && (

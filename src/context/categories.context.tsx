@@ -34,7 +34,7 @@ const CategoryContextProvider: React.FC = ({children}) => {
       querySnapshot => {
         let data: FirebaseFirestoreTypes.DocumentData[] = [];
         querySnapshot.forEach(doc => data.push({id: doc.id, ...doc.data()}));
-        setCategories(data);
+        setCategories(data.sort((a, b) => (a.name > b.name ? 1 : -1)));
       },
       error => {
         setCategoriesError(error.message);
