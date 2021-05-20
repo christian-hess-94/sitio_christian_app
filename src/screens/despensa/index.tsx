@@ -12,9 +12,15 @@ import {FlatList} from 'react-native';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {StackScreenNames} from '..';
 
-export interface DespensaScreenProps {}
+export interface DespensaScreenProps {
+  isShoppingList: boolean;
+}
 
-const DespensaScreen: React.FC<SSP<StackScreenNames, 'Despensa'>> = () => {
+const DespensaScreen: React.FC<SSP<StackScreenNames, 'Despensa'>> = ({
+  route: {
+    params: {isShoppingList},
+  },
+}) => {
   const theme = useTheme();
   const [visibleAddCompra, setVisibleAddCompra] = useState(false);
   const [visibleEditCompra, setVisibleEditCompra] = useState(false);
@@ -31,9 +37,10 @@ const DespensaScreen: React.FC<SSP<StackScreenNames, 'Despensa'>> = () => {
       <FlatList
         data={categories}
         keyExtractor={item => item.id}
-        renderItem={({item}) => (
+        renderItem={({item: category}) => (
           <CategoryDivider
-            category={item}
+            isShoppingList={isShoppingList}
+            category={category}
             openEditCompraModal={openEditCompraModal}
           />
         )}

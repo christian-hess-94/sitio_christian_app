@@ -1,7 +1,7 @@
 import ChangeProfileScreen, {
   ChangeProfileScreenProps,
 } from './changeProfile/changeProfile.screen';
-import DespensaScreen, {DespensaScreenProps} from './compras';
+import DespensaScreen, {DespensaScreenProps} from './despensa';
 import LoginScreen, {LoginScreenProps} from './login/login.screen';
 import PanelScreen, {PanelScreenProps} from './panel/panel.screen';
 import React, {useContext} from 'react';
