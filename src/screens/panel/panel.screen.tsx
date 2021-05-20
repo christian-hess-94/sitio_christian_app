@@ -1,6 +1,5 @@
-import {Button, useTheme} from 'react-native-paper';
-
-import CustomCard from '../../components/customCard';
+import {Button} from 'react-native-paper';
+import DespensaCard from './cards/despensa.card';
 import React from 'react';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {ScreenStyledContainer} from '../../components/ScreenContainer/styles';
@@ -12,21 +11,9 @@ export interface PanelScreenProps {}
 const PanelScreen: React.FC<SSP<StackScreenNames, 'Panel'>> = ({
   navigation: {reset, navigate},
 }) => {
-  const theme = useTheme();
   return (
     <ScreenStyledContainer>
-      <CustomCard
-        title="Compras"
-        content={<></>}
-        actions={[
-          {
-            text: 'Ver tudo',
-            onPress: () => navigate('Compras', {}),
-            mode: 'contained',
-            color: theme.colors.primary,
-          },
-        ]}
-      />
+      <DespensaCard />
       <Button
         onPress={() => {
           auth().signOut();

@@ -3,42 +3,49 @@ import React, {useContext, useState} from 'react';
 
 import AddCategory from '../../forms/addCategory.form';
 import AddCompra from '../../forms/addCompra.form';
+import {BottomSpacer} from '../../components/flex-layout/styles';
 import {CategoryContext} from '../../context/categories.context';
 import CategoryDivider from '../../components/categoryDivider';
+import {ComprasContext} from '../../context/compras.context';
 import EditCompra from '../../forms/editCompra.form';
 import {FirebaseFirestoreTypes} from '@react-native-firebase/firestore';
 import {FlatList} from 'react-native';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {StackScreenNames} from '..';
 
-export interface ComprasScreenProps {}
+export interface DespensaScreenProps {
+  isShoppingList: boolean;
+}
 
-const ComprasScreen: React.FC<SSP<StackScreenNames, 'Compras'>> = () => {
+const DespensaScreen: React.FC<SSP<StackScreenNames, 'Despensa'>> = ({
+  route: {
+    params: {isShoppingList},
+  },
+}) => {
   const theme = useTheme();
   const [visibleAddCompra, setVisibleAddCompra] = useState(false);
   const [visibleEditCompra, setVisibleEditCompra] = useState(false);
-  const [
-    compraToEdit,
-    setCompraToEdit,
-  ] = useState<FirebaseFirestoreTypes.DocumentData>();
   const [visibleAddCAtegory, setVisibleAddCAtegory] = useState(false);
   const [openFabGroup, setOpenFabGroup] = useState(false);
   const {categories} = useContext(CategoryContext);
+  const {setSelectedCompra} = useContext(ComprasContext);
   const openEditCompraModal = (compra: FirebaseFirestoreTypes.DocumentData) => {
     setVisibleEditCompra(true);
-    setCompraToEdit(compra);
+    setSelectedCompra(compra);
   };
   return (
     <>
       <FlatList
         data={categories}
         keyExtractor={item => item.id}
-        renderItem={({item}) => (
+        renderItem={({item: category}) => (
           <CategoryDivider
-            category={item}
+            isShoppingList={isShoppingList}
+            category={category}
             openEditCompraModal={openEditCompraModal}
           />
         )}
+        ListFooterComponent={<BottomSpacer />}
       />
       <FAB.Group
         visible
@@ -67,10 +74,7 @@ const ComprasScreen: React.FC<SSP<StackScreenNames, 'Compras'>> = () => {
           setVisibleEditCompra(false);
         }}
         dismissable>
-        <EditCompra
-          compraToEdit={compraToEdit}
-          onDismissModal={() => setVisibleEditCompra(false)}
-        />
+        <EditCompra onDismissModal={() => setVisibleEditCompra(false)} />
       </Modal>
       <Modal
         visible={visibleAddCAtegory}
@@ -82,4 +86,4 @@ const ComprasScreen: React.FC<SSP<StackScreenNames, 'Compras'>> = () => {
   );
 };
 
-export default ComprasScreen;
+export default DespensaScreen;

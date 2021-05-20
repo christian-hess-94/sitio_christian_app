@@ -1,7 +1,7 @@
 import ChangeProfileScreen, {
   ChangeProfileScreenProps,
 } from './changeProfile/changeProfile.screen';
-import ComprasScreen, {ComprasScreenProps} from './compras';
+import DespensaScreen, {DespensaScreenProps} from './despensa';
 import LoginScreen, {LoginScreenProps} from './login/login.screen';
 import PanelScreen, {PanelScreenProps} from './panel/panel.screen';
 import React, {useContext} from 'react';
@@ -22,7 +22,7 @@ export type StackScreenNames = {
   Login: LoginScreenProps;
   Panel: PanelScreenProps;
   ChangeProfile: ChangeProfileScreenProps;
-  Compras: ComprasScreenProps;
+  Despensa: DespensaScreenProps;
 };
 
 const Screens: React.FC<ScreenProps> = () => {
@@ -62,11 +62,11 @@ const Screens: React.FC<ScreenProps> = () => {
               component={ChangeProfileScreen}
             />
             <Screen
-              name="Compras"
+              name="Despensa"
               options={{
-                title: 'Compras',
+                title: 'Despensa',
               }}
-              component={ComprasScreen}
+              component={DespensaScreen}
             />
           </Navigator>
         </PaperProvider>

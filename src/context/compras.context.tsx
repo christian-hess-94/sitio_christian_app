@@ -4,6 +4,10 @@ import {FirebaseFirestoreTypes} from '@react-native-firebase/firestore';
 import {comprasCollection} from '../schemas/firestore/compra/compra.firestore';
 
 interface ComprasLogic {
+  selectedCompra: FirebaseFirestoreTypes.DocumentData;
+  setSelectedCompra: React.Dispatch<
+    React.SetStateAction<FirebaseFirestoreTypes.DocumentData>
+  >;
   compras: FirebaseFirestoreTypes.DocumentData[];
   setCompras: React.Dispatch<
     React.SetStateAction<FirebaseFirestoreTypes.DocumentData[]>
@@ -13,6 +17,8 @@ interface ComprasLogic {
 }
 
 export const ComprasContext = createContext<ComprasLogic>({
+  selectedCompra: [],
+  setSelectedCompra: () => null,
   compras: [],
   setCompras: () => null,
   comprasError: '',
@@ -20,11 +26,17 @@ export const ComprasContext = createContext<ComprasLogic>({
 });
 
 const CompraContextProvider: React.FC = ({children}) => {
+  const [
+    selectedCompra,
+    setSelectedCompra,
+  ] = useState<FirebaseFirestoreTypes.DocumentData>([]);
   const [compras, setCompras] = useState<FirebaseFirestoreTypes.DocumentData[]>(
     [],
   );
   const [comprasError, setComprasError] = useState('');
   const comprasValues = {
+    selectedCompra,
+    setSelectedCompra,
     compras,
     setCompras,
     comprasError,
