@@ -16,12 +16,12 @@ const PanelScreen: React.FC<SSP<StackScreenNames, 'Panel'>> = ({
   return (
     <ScreenStyledContainer>
       <CustomCard
-        title="Compras"
+        title="Despensa"
         content={<></>}
         actions={[
           {
             text: 'Ver tudo',
-            onPress: () => navigate('Compras', {}),
+            onPress: () => navigate('Despensa', {}),
             mode: 'contained',
             color: theme.colors.primary,
           },

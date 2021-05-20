@@ -5,28 +5,26 @@ import AddCategory from '../../forms/addCategory.form';
 import AddCompra from '../../forms/addCompra.form';
 import {CategoryContext} from '../../context/categories.context';
 import CategoryDivider from '../../components/categoryDivider';
+import {ComprasContext} from '../../context/compras.context';
 import EditCompra from '../../forms/editCompra.form';
 import {FirebaseFirestoreTypes} from '@react-native-firebase/firestore';
 import {FlatList} from 'react-native';
 import {StackScreenProps as SSP} from '@react-navigation/stack';
 import {StackScreenNames} from '..';
 
-export interface ComprasScreenProps {}
+export interface DespensaScreenProps {}
 
-const ComprasScreen: React.FC<SSP<StackScreenNames, 'Compras'>> = () => {
+const DespensaScreen: React.FC<SSP<StackScreenNames, 'Despensa'>> = () => {
   const theme = useTheme();
   const [visibleAddCompra, setVisibleAddCompra] = useState(false);
   const [visibleEditCompra, setVisibleEditCompra] = useState(false);
-  const [
-    compraToEdit,
-    setCompraToEdit,
-  ] = useState<FirebaseFirestoreTypes.DocumentData>();
   const [visibleAddCAtegory, setVisibleAddCAtegory] = useState(false);
   const [openFabGroup, setOpenFabGroup] = useState(false);
   const {categories} = useContext(CategoryContext);
+  const {setSelectedCompra} = useContext(ComprasContext);
   const openEditCompraModal = (compra: FirebaseFirestoreTypes.DocumentData) => {
     setVisibleEditCompra(true);
-    setCompraToEdit(compra);
+    setSelectedCompra(compra);
   };
   return (
     <>
@@ -67,10 +65,7 @@ const ComprasScreen: React.FC<SSP<StackScreenNames, 'Compras'>> = () => {
           setVisibleEditCompra(false);
         }}
         dismissable>
-        <EditCompra
-          compraToEdit={compraToEdit}
-          onDismissModal={() => setVisibleEditCompra(false)}
-        />
+        <EditCompra onDismissModal={() => setVisibleEditCompra(false)} />
       </Modal>
       <Modal
         visible={visibleAddCAtegory}
@@ -82,4 +77,4 @@ const ComprasScreen: React.FC<SSP<StackScreenNames, 'Compras'>> = () => {
   );
 };
 
-export default ComprasScreen;
+export default DespensaScreen;
