@@ -54,25 +54,72 @@ const EditCompra: React.FC<EditCompraFormProps> = ({onDismissModal}) => {
             value={name}
             onChangeText={handleChange('name')}
             mode="outlined"
-            placeholder="Nome da compra"
+            label="Nome"
+            // placeholder="Nome da compra"
           />
           {errors.name && <Text>{errors.name}</Text>}
           <TextInput
             value={quantity}
             mode="outlined"
             onChangeText={handleChange('quantity')}
-            placeholder="Quantidade atual"
+            // placeholder="Quantidade atual"
             keyboardType="numeric"
             autoCompleteType="off"
+            label="Quantidade atual"
+            right={
+              <TextInput.Icon
+                name="plus"
+                onPress={() => {
+                  setFieldValue(
+                    'quantity',
+                    (parseInt(quantity, 10) + 1).toString(),
+                  );
+                }}
+              />
+            }
+            left={
+              <TextInput.Icon
+                name="minus"
+                onPress={() => {
+                  setFieldValue(
+                    'quantity',
+                    (parseInt(quantity, 10) - 1).toString(),
+                  );
+                }}
+              />
+            }
           />
           {errors.quantity && <Text>{errors.quantity}</Text>}
           <TextInput
             value={quantityGoal}
             mode="outlined"
+            label="Quantidade desejada"
             onChangeText={handleChange('quantityGoal')}
-            placeholder="Quantidade máxima"
+            // placeholder="Quantidade máxima"
             keyboardType="numeric"
             autoCompleteType="off"
+            right={
+              <TextInput.Icon
+                name="plus"
+                onPress={() => {
+                  setFieldValue(
+                    'quantityGoal',
+                    (parseInt(quantityGoal, 10) + 1).toString(),
+                  );
+                }}
+              />
+            }
+            left={
+              <TextInput.Icon
+                name="minus"
+                onPress={() => {
+                  setFieldValue(
+                    'quantityGoal',
+                    (parseInt(quantityGoal, 10) - 1).toString(),
+                  );
+                }}
+              />
+            }
           />
           {errors.quantityGoal && <Text>{errors.quantityGoal}</Text>}
           <Menu
@@ -115,7 +162,7 @@ const EditCompra: React.FC<EditCompraFormProps> = ({onDismissModal}) => {
         {
           text: 'Editar compra',
           onPress: handleSubmit,
-          color: theme.colors.primary,
+          color: undefined,
         },
       ]}
     />
